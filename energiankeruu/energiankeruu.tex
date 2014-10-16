@@ -1,0 +1,621 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Esimerkki opinnäytteen tekemisestä LaTeX:lla 20070123          %%
+%% Alkuperäinen versio Luis Costa,  muutokset Perttu Puska        %%
+%% Korjattu  20070129 opettajien kommenttien jälkeen              %%
+%%                                                                %%
+%% Tähän esimerkkiin kuuluu tiedostot                             %%
+%%               opinnaytepohja.tex                               %%
+%%               thesis.sty                                       %%
+%%               kuva1.eps                                        %%
+%%               kuva2.eps                                        %%
+%%                                                                %%
+%%                                                                %%
+%% Kääntäminen                                                    %%
+%%  latex:                                                        %%
+%%             $ latex opinnaytepohja                             %%
+%%             $ latex opinnaytepohja                             %%
+%%                                                                %%
+%%   Tuloksena on tiedosto opinnayte.dvi, joka                    %%
+%%   muutetaan ps-muotoon seuraavasti                             %%
+%%                                                                %%
+%%             $ dvips opinnaytepohja -o                          %%
+%%                                                                %%
+%% Selittävät kommentit on tässä esimerkissä varustettu           %%
+%% %%-merkeillä ja muutokset, joita käyttäjä voi tehdä,           %%
+%% on varustettu %-merkeillä                                      %%
+%%                                                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Käytä näitä, jos kirjoitat suomeksi
+\documentclass[finnish,12pt]{article}
+\usepackage[finnish]{thesis}
+
+%% Uncomment these if you write in English
+%\documentclass[12pt]{article}
+%\usepackage[english]{thesis}
+
+%% Jos käytät latex-komentoa käännettäessä (oletusarvo)
+%% kuvat kannattaa tehdä eps-muotoon. Älä käytä ps-muotoisia kuvia!
+%% Käytä seuraavaa latex-komennon ja eps-kuvien kanssa
+\usepackage[dvips]{graphicx}
+
+%% Jos tääs käytät pdflatex-komentoa,
+%% joka kääntää tekstin suoraan pdf-tiedostoksi ja kuvasi
+%% ovat esim. jpg-formaatissa tai pdf-formaatissa,
+%% käytetään seuraavaa pakettia, kommentoi siis kommenttimerkki pois
+%% Huom! Tekstin marginaalit saattavat poiketa n. 2-5 mm
+%% suosituksesta, jos käytät pdflatex-komentoa!
+%\usepackage[pdftex]{graphicx}
+
+%% Saat pdf-tiedoston viittaukset ja linkit kuntoon seuraavalla paketilla.
+%% Paketti toimii erityisen hyvin pdflatexin kanssa.
+%\usepackage[pdfpagemode=None,colorlinks=true,urlcolor=red,%
+%linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
+
+%% Jos et jostain syystä tykkää käyttää
+%% edellistä hyperref pakettia, voit käyttää myös seuraavaa pakettia
+%% (tarvitaan lähinnä url-komennon määrittämiseen ja formatoimiseen)
+\usepackage{url}
+
+%% Matematiikan fontteja, symboleja ja muotoiluja lisää, näitä tarvitaan usein
+\usepackage{amsfonts,amssymb,amsbsy}
+
+%% Taulukon paketti
+\usepackage{multirow}
+
+%% Käytä seuraavaa pakettia jos haluat
+%% Times-fontit LaTeX:n normaalien Computer Modern-fonttien sijaan.
+%% Times-fontit ja Computer Modern-fontit ovat kummatkin roomalaisia
+%% fonttityyppejä ja monet kutsuvat kaikkia roomalaisia
+%% fontteja virheellisesti Times-fonteiksi,
+%% vaikka tarkasti ottaen Times on vain Times-lehden fontti.
+%% Computer Modern on Donald Knuthin suunnittele fontti, joka
+%% on Century Magazinen fontin variantti.
+%% Huom! Kaavoihin ei tule Times-fontteja, joten lopputulos ei ole
+%% välttämättä aivan tyylikäs. Pakettia ei suositella sen vuoksi.
+%\usepackage{times}
+
+%% Vaakasuunnan mitat, ÄLÄ KOSKE!
+\setlength{\hoffset}{-1in}
+\setlength{\oddsidemargin}{35mm}
+\setlength{\evensidemargin}{25mm}
+\setlength{\textwidth}{15cm}
+%% Pystysuunnan mitat, ÄLÄ KOSKE!
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{7mm}
+\setlength{\headheight}{1em}
+\setlength{\topmargin}{25mm-\headheight-\headsep}
+\setlength{\textheight}{23cm}
+%% Vasensuora-asettelu, joka opinnäytteessä vaaditaan. ÄLÄ KOSKE
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+\bibliographystyle{unsrt_fin}
+
+%% Kaikki mikä paperille tulostuu, on tämän jälkeen
+\begin{document}
+
+%% Kansisivu ja tiivistelmälomakkeet ``luodaan'' allaolevien makrojen avulla.
+%% Oletuksena suomenkielien opinnäyte.
+\Language{Finnish}{Suomi}
+%\Language{English}{Englanti}
+
+%% ÄLÄ KOSKE!
+\university{helsinki university of technology}{teknillinen korkeakoulu}
+
+%% Korjaa seuraavat vastaamaan omaa osastoasi ja tutkinto-ohjelmaasi
+\faculty{Faculty of Electronics, Communications and Automation}{Elektroniikan, tietoliikenteen ja automaation tiedekunta}%
+%%
+
+%% Vain DI- ja lisensiaatintyölle
+%\professorship{Circuit theory}{Piiriteoria}
+%\code{S-55}
+%%
+
+%% Valitse yksi näistä kolmesta
+\degree{BSc}
+%\degree{MSc}
+%\degree{Lic}
+
+%% Oma nimi
+\author{Mikko Tuohimaa}
+
+%% Opinnäytteen nimi tulee vain tähän
+\thesistitle{Energy Harvesting in micro and nano scale}{Energiankeruu mikro- ja nanoskaalassa}
+
+%% Kandidaatintyön päivämäärä on sen esityspäivämäärä!
+\date{11.12.2008}
+
+%% Kandidaattiseminaarin vastuuopettaja
+\supervisor{Sc.D. Kai Zenger}{TkT Kai Zenger}
+
+%% Kandidaatintyön ohjaaja
+\instructor{M.Sc. Petri Hänninen}{DI Petri Hänninen}
+
+%% Tehdään kansilehti
+\makecoverpage
+
+
+%% Suomenkielinen tiivistelmä
+%% Tiivistelmän avainsanat
+\keywords{Energiankeruu, piezo, aurinkokenno, värähtely, mikro, nano}
+%% Tiivistelmän tekstiosa
+\begin{abstractpage}[finnish]
+
+Työssä kartoitetaan olemassa- ja suunnitteilla olevia energiankeruumenetelmiä sekä niiden soveltuvuutta 
+ja skaalautuvuutta mikro- ja nanokokoisiin sovelluksiin. Erityisenä tarkastelun 
+kohteena on pieni langaton sensori tietyssä ympäristössä. Tuloksena on suunniteltu sensorille optimaalinen energianlähde. Työ on kirjallisuustutkielma.
+
+\end{abstractpage}
+
+%% Pakotetaan uusi sivu varmuuden vuoksi, jotta
+%% mahdollinen suomenkielinen ja englanninkielinen tiivistelmä
+%% eivät tule vahingossakaan samalle sivulle
+%\newpage
+%
+%% Englannikielisen tiivistelmä
+%% kandintyössä ei ole englanninkielistä tiivistelmää,
+%% niinpä se on kommentoitu pois.
+%% Abstract keywords
+%\keywords{Resistor, Resistance,\\ Temperature}
+%% Abstract text
+%\begin{abstractpage}[english]
+%%Jos kirjoitat työsi suomeksi, kirjoita englanninkielinen tiivistelmä tähän.
+%\end{abstractpage}
+
+
+%% Esipuhe
+%\mysection{Esipuhe}
+%\mysection{Preface}
+%Haluan kiittää Professori Pirjo
+%Professoria ja ohjaajaani Olli Ohjaajaa hyvästä ja
+%huonosta ohjauksesta.\\
+
+%\vspace{5cm}
+%Otaniemi, 5.5.2008
+
+%\vspace{5mm}
+%{\hfill Teemu T.A. Teekkari \hspace{1cm}}
+
+%% Pakotetaan varmuuden vuoksi esipuheen jälkeinen osa
+%% alkamaan uudelta sivulta
+\newpage
+
+
+%% Sisällysluettelo
+%% addcontentsline tekee pdf-tiedostoon viitteen sisällysluetteloa varten
+\addcontentsline{toc}{section}{Sisällysluettelo}
+%\addcontentsline{toc}{section}{Contents}
+%% Tehdään sisällysluettelo
+\tableofcontents
+
+
+%% Symbolit ja lyhenteet
+\mysection{Symbolit ja lyhenteet}
+
+%\subsection*{Symbolit}
+
+%\begin{tabular}{ll}
+
+%$\mathbf{B}$  & magneettivuon tiheys  \\
+%$c$              & valon nopeus tyhjiössä $\approx 3\times10^8$ [m/s]\\
+%$\omega_{\mathrm{D}}$    & Debye-taajuus \\
+%$\omega_{\mathrm{latt}}$ & hilan keskimääräinen fononitaajuus \\
+%$\uparrow$       & elektronin spinin suunta ylöspäin\\
+%$\downarrow$     & elektronin spinin suunta alaspäin
+%\end{tabular}
+
+\subsection*{Lyhenteet}
+
+\begin{tabular}{ll}
+FET & Field Effect Transistor \\
+LED & Light Emitting Diode \\
+Li-ion & Litiumioni (akkuteknologia) \\
+MEMS & Microelectromechanic Systems \\
+RF & Radio Frequency \\
+RFID & Radio Frequency Identification \\
+TEG	& Thermoelectric Generator \\
+WLAN & Wireless Local Area Network
+\end{tabular}
+
+
+%% Sivulaskurin viilausta opinnäytteen vaatimusten mukaan:
+%% Aloitetaan sivunumerointi arabialaisilla numeroilla (ja jätetään
+%% leipätekstin ensimmäinen sivu tyhjäksi,
+%% ks. alla \thispagestyle{empty}).
+%% Pakotetaan lisäksi ensimmäinen varsinainen tekstisivu alkamaan
+%% uudelta sivulta clearpage-komennolla.
+%% clearpage on melkein samanlainen kuin newpage, mutta
+%% flushaa myös LaTeX:n floatit
+\clearpage
+\storeinipagenumber
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%% Ensimmäinen osa, LEIPÄTEKSTI ALKAA
+\section{Johdanto}
+%% Ensimmäinen sivu tyhjäksi
+\thispagestyle{empty}
+
+Ympäristöstään energiansa keräävät toimilaitteet ovat nousemassa yhä tärkeämmiksi ratkaisuiksi erilaisiin ongelmiin \cite{Chalasani}. Ne eivät tarvitse toimiakseen akkua tai muuta ulkoista energianlähdettä, vaan keräävät toimintaenergiansa ympäristön valosta, värähtelyistä, lämmönvaihteluista, radioaalloista tai muusta keräämiskelpoisesta lähteestä. Menetelmällä saavutetaan monia korvaamattomia etuja, joista tärkeimpänä huoltovapaan toiminta-ajan merkittävä kasvu akkujen vaihtamisen ja lataamisen tarpeen poistuessa.
+
+Ympäristön energiaa, erityisesti aurinkosähköä on käytetty hyväksi jo pitkään erilaisissa makrokoon sovelluksissa. Energiankeruu on kuitenkin noussut myöhemmin ajankohtaiseksi erityisesti toimilaitteiden pienenemisen myötä: mikro- ja nanokoon laitteet tarvitsevat vähemmän energiaa ja toisaalta pienessä mittakaavassa muutoin mitättömät ilmiöt, esimerkiksi rakenteiden värähtelyt, nousevat merkittäväksi energianlähteeksi. Pieniä laitteita voidaan myös upottaa hankaliin paikkoihin, kuten seinien ja muiden rakenteiden sisään valvomaan niiden kuntoa; tällaisissa sovelluksissa ilman energiankeruuta toimilaitteen elinikä riippuisi täysin akun kapasiteetista. Akkukesto taas on ongelma, koska nykyisten akkujen energiatiheys on varsin huono~\cite{Yamada}, ja jatkuvasta kehityksestä huolimatta sitä ei ilman täysin uusia ratkaisuja pystytä parantamaan riittävästi.
+
+Mittakaavan pienentyessä energian\-keruu\-mene\-telmät saavat etu\-matkaa akkuihin etenkin siksi, että akun kapasiteetti on suoraan verran\-nol\-linen sen tilavuuteen, kun taas energian\-keruu\-mene\-telmien teho on monesti verran\-nollinen pinta-alaan tai jopa pituuteen; todettakoon, että laitteen särmän pienentyessä kymmenes\-osaansa sen tilavuus pienenee tuhannesosaan, mutta pinta-ala vain sadasosaan - juuri pinta-ala-tilavuussuhde puoltaa monien sovellusten kohdalla energiankeruun käyttöä. Energian\-keruu\-mene\-telmien haittapuolina taas on, että saatavat jännitteet ovat monesti hyvin pieniä; tämä vaatii ohjaus\-elektro\-niikalta paljon, jotta hyötysuhde saadaan pidettyä riittävänä. Ongelmana on myös, että energian saatavuus ympäristöstä on harvoin vakio, minkä takia jonkinlaista energian väli\-varastoa, kuten akkua tai konden\-saat\-toria, on käytettävä lähes poikkeuksetta; lisäksi kriittisten sovellusten, kuten sydämen\-tahdistimien tai prosessin kannalta olennaisten anturien tapauksessa energia\-järjestelmä on monesti ylimitoitettava jatkuvan energian\-saannin turvaamiseksi.
+
+Tämä työ on kirjalli\-suus\-tut\-kimus energian\-keruu\-mene\-tel\-mien nyky\-tilasta. Työssä myös suunnitellaan optimaalinen energia\-järjes\-telmä pienelle langattomalle sensorille tietyssä toiminta\-ympäristössä, mikä sisältää perusratkaisun, ohjaus\-elektro\-niikan ja energia\-varaston valinnan ja mitoituksen. Järjestelmän kriteereinä on riittävän yhtä\-jaksoisen toiminta-ajan turvaaminen ja laitteen koon pitäminen suun\-nitel\-luissa rajoissa.
+
+
+
+%% Opinnäytteessä jokainen osa alkaa uudelta sivulta, joten clearpage
+\clearpage
+%% Seuraava osa
+\section{Energianlähteet ja keruumenetelmät}
+\label{s:menetelmat}
+
+Energiankeruumenetelmiä on tutkittu varsin paljon, mutta kaikki teknologiat eivät sellaisenaan sovellu miniatyrisoituihin sovelluksiin. Toisaalta myös kääntäen monien ratkaisujen teho-tilavuussuhde pienenee dramaattisesti skaalan kasvaessa, mikä rajoittaa niiden käytön tietyn kokoluokan laitteisiin. On myös huomattava, että energiankeräin sisältää tiettyä energianlähdettä hyödyntävän konstruktion lisäksi yleensä ainakin tarvittavaa ohjauselektroniikkaa ja on tiiviissä yhteydessä ajamansa laitteen kanssa, kuten nähdään kuvasta \ref{img:lohkokaavio}. Seuraavaksi esitellään yleisimmät energianlähteet ja niiden hyödyntämisen perusratkaisut.
+
+\begin{figure}[htcb]
+\includegraphics[width=120mm]{lohkokaavio.eps}
+\caption{Ympäristön energiaa hyödyntävän laitteen lohkokaavio}
+\label{img:lohkokaavio}
+\end{figure}
+
+\subsection{Värähtely}
+\label{subs:varahtely}
+
+Pintojen ja rakenteiden värähtely ei intuitiivisesti ole erityisen tehokas energianlähde. Kuitenkin laitteiden pienentyessä värähtelyjen amplitudin suhde laitteen kokoon nousee merkittäväksi, ja siitä kerätyllä energialla voidaan käyttää vähävirtaista laitetta: jopa alle 0,2$\mu$m:n värähtelyamplitudit ovat käyttökelpoisia~\cite{Bartsch}.
+
+Kaikki värähtelyenergiaa keräävät laitteet perustuvat massaan, joka oman inertiansa ansiosta liikkuu suhteessa kehykseensä kehyksen värähdellessä ympäristön vaikutuksesta. Tämän liikkeen energia otetaan hyötykäyttöön laittamalla massa tekemään työtä liikettä vaimentavaa voimaa vastaan. Massan kiinnitys voi olla suunniteltu vain rajoittamaan massan liikerataa, mutta monesti käytetään erilaisia jousi-massa-systeemejä resonanssin aikaansaamiseksi. Keräimen yksinkertaistettu malli on esitetty kuvassa \ref{img:varahtely_lohkokaavio}.
+
+\begin{figure}[htcb]
+\includegraphics[width=60mm]{vibra_lohkokaavio.eps}
+\caption{Värähtelykeräimen yksinkertaistettu malli \cite{Pereyma}}
+\label{img:varahtely_lohkokaavio}
+\end{figure}
+
+Edellä kuvatun energiankeruumenetelmän ulostuloteholle on johdettavissa vaimentavan voiman luonteesta riippuva kaava. Merkitään massan paikan poikkeamaa kehykseen nähden $z(t)$:llä ja kehyksen absoluuttiliikettä $y(t)$:llä. Tällöin massan absoluuttiliike on $x(t) = y(t) + z(t)$. Harmonisella ympäristön värähtelyllä saadaan $y(t) = Y_{0} cos (\omega t)$, jossa $Y_{0}$ on ympäristön värähtelyn amplitudi. Vastaavasti $Z_{0}$ on massan värähtelyn amplitudi, jolla on rakenteellinen yläraja $Z_{l}$. Tällöin esim. massan nopeudesta riippuvan voiman (mm. elektromagneettinen) tapauksessa systeemin differentiaaliyhtälöksi saadaan
+
+\begin{equation}\label{eq:ve1}
+m\ddot{z}(t) = -kz(t) - D\dot{z}(t) - m\ddot{y}(t) ,
+\end{equation}
+
+jossa $k$ on massan kiinnityksen jousivakio ja D on vaimentavan voiman nopeuskerroin. Systeemin resonanssitaajuus on $\omega_{n} = \sqrt{\frac{k}{m}}$~\cite{Mansfield}, ja käyttämällä normalisoitua vaimennuskerrointa, $\zeta = \frac{D}{2m\omega_{n}}$, kaavan~(\ref{eq:ve1}) Laplace-muunnoksesta saadaan siirtofunktioksi kehyksen liikkeen ja massan suhteellisen liikkeen välille
+
+\begin{equation}\label{ve1-l}
+\frac{Z(s)}{Y(s)} = \frac{-s^2}{s^2 + 2\zeta\omega_{n}s + \omega_{n}^2}.
+\end{equation}
+
+Tästä on johdettavissa suhteellisen liikkeen amplitudi taajuuden funktiona,
+
+\begin{equation}\label{ve1-z0}
+\frac{Z_{0}}{Y_{0}} = \frac{\omega_{c}^2}{\sqrt{(1-\omega_{c}^2)^2 + (2\zeta\omega_{c})^2}} ,
+\end{equation}
+
+jossa $\omega_{c} = \frac{\omega}{\omega_{n}}$.~\cite{Mitcheson}
+
+Vaimentavaa voimaa vastaan tehty työ jokaista sykliä kohden on luonnollisesti voiman määrätty integraali
+
+\begin{equation}\label{ve1-energypercycle}
+W = 2D \int\limits_{-Z_{0}}^{Z_{0}} \dot{z}dz ,
+\end{equation}
+
+josta saadaan teho $P$ laskemalla $Z_0$:n arvo kaavalla~(\ref{ve1-z0}) ja kertomalla taajuudella:
+
+\begin{equation}\label{ve1-power}
+P = \frac{\zeta \omega_{c}^3 Y_{0}^2 \omega^3 m}{(1 - \omega_{c}^2)^2 + (2 \zeta \omega_{c})^2} .
+\end{equation}
+
+Tämä malli ei ota huomioon $Z_{l}$:n olemassaoloa eikä systeemissä esiintyvää muuta vaimennusta $b$ (jousen ominaisuudet, ilmanvastus ym.).
+
+Perinteinen tapa kerätä värähtelyenergiaa on muuttaa se sähköpotentiaaliksi käyttämällä massana jousen varassa kelluvaa magneettia ja yhdistämällä kehykseen staattorikela: magneetti värähtelee kelan suhteen ympäristön värähtelyjen ansiosta ja luo siten kelaan vaihtojännitteen. Menetelmä on melko yksinkertainen rakenteeltaan, mutta sallii vain tietynsuuntaisten värähtelyjen energian talteenoton ja perinteisillä komponenteilla toteutettuna vaatii värähtelyltä melko suuren amplitudin siedettävän hyötysuhteen saavuttamiseksi.
+
+Värähtelyä voi muuttaa sähköpotentiaaliksi myös muilla tavoin. Yksi niistä on käyttää hyväksi kondensaattoria, jossa elektrodien välimatka tai yhteinen pinta-ala ei ole kiinteä, vaan voi muuttua värähtelyn mukana. Tällaisen kondensaattorin, eli varaktorin, kapasitanssi vähenee elektrodiraon kasvun tai pinta-alan pienenemisen (kuva \ref{img:elektrostaattinen}) funktiona~\cite{Mansfield}, joten elektrodien loitontuessa toisistaan varaktorin napojen välinen jännite kasvaa. Tällöin värähtelyn myötä saadaan aikaan vaihtojännite, josta tasasuuntaamalla saadaan käyttövoimaa laitteelle. Menetelmän etuna on kohtuullisen hyvä energiatiheys, mutta haittana vaatimus varaktorin esivaraamiselle; jännitteen muutos on suoraan verrannollinen alkuperäiseen jännitteeseen, mistä seuraa, että varaamattoman varaktorin jännite pysyy nollassa.
+
+\begin{figure}[htcb]
+\includegraphics[width=60mm]{elektrostaattinen.eps}
+\caption{Mahdollinen elektrostaattisen värähtelykeräimen konstruktio \cite{Mitcheson}}
+\label{img:elektrostaattinen}
+\end{figure}
+
+Kondensaattoriin perustuvan keräimen ulostuloteho voidaan ilmaista ulostulojännitteen V ja laitteeseen kytketyn kuorman R avulla seuraavasti:
+
+\begin{equation}
+\label{vk}
+P = VI = V \cdot \frac{V}{R} = \frac{V^2}{R} .
+\end{equation}
+
+Koska kondensaattorin tuottama jännite on 
+
+\begin{equation}
+\label{vk_v}
+V = V_{max} - V_{orig} 
+  = \frac{Q}{C_{min}} - V_{orig} 
+  = \frac{CV_{orig}}{C - \Delta{}C} - V_{orig} 
+  = V_{orig} \cdot (\frac{\Delta{}C}{C - \Delta{}C}) ,
+\end{equation}
+
+nähdään ulostulojännitteen olevan suoraan verrannollinen alkuperäiseen varausjännitteeseen ja myös kapasitanssin muutoksen funktio.
+
+Kolmas, suuren kiinnostuksen kohteena oleva keino muuttaa värähtelyenergiaa sähköksi on käyttää piezosähköisiä materiaaleja. Kyseisten aineiden ominaisuutena on, että paine, vääntäminen ym. fyysinen muokkaus saavat niissä aikaan sähkövirran. Ilmiö toimii myös kääntäen, jolloin syöttämällä sähkövirtaa piezosähköiseen kappaleeseen saadaan se muuttamaan muotoaan; tätä on käytetty jo vuosikymmeniä erilaisissa sovelluksissa. Piezomateriaalit ovat jatkuvan kehitystyön alaisia, tavoitteena löytää uusia kestävämpiä aineita, joilla myös saadaan aikaan suurempia jännitteitä. Piezomateriaalien etuna on vähäisestäkin liikkeestä saatava korkea avoimen piirin jännite, mutta heikkoutena vaatimaton oikosulkuvirta; lisäksi piezosähköiset keräimet ovat erinomaisia värähtelyenergiakeräimiä siinä suhteessa, että ne pystyvät hyödyntämään poikkeuksellisen leveää taajuuskaistaa~\cite{Ottman}.
+
+\subsection{Lämpö}
+\label{subs:lampo}
+
+Energian kerääminen ympäristön lämpötilasta on hieman harhaanjohtava käsite, koska energia itse asiassa kerätään keräimessä olevasta lämpötilagradientista; Seebeck-ilmiön hyödyntäminen vaatii siis sen, että laitteella on "kuuma" ~ja "kylmä" ~puoli. Ilmiö on sitä voimakkaampi, mitä suurempaa lämpötilaeroa päästään hyödyntämään, mutta tulee myös ottaa huomioon lämmön johtaminen pois laitteesta lämpötilaeron säilyttämiseksi.
+
+Seebeck-ilmiön pohjana on kahden metallin tai puolijohteen välinen liitos. Koska eri materiaaleilla on eri ominaisenergiatasot, liitoskohdassa elektronit liikkuvat puolelta toiselle, kunnes liitoksen sähköpotentiaali on nolla. Kuitenkin jos toinen materiaali on eri lämpötilassa kuin toinen, muuttuu sen ominaisenergiataso ja sähkövirta liitoksessa jatkuu. Eri materiaaliyhdistelmien jännite-lämpötilaominaisuudet vaihtelevat, mutta 40$\mu{}V/K$:a voidaan pitää hyvänä arvona~\cite{Mateu}.
+
+Seebeck-ilmiön aiheuttama jännite voidaan laskea kaavalla 
+
+\begin{equation}\label{Seebeck}
+V = \int\limits_{T_1}^{T_2} (S_B(T) - S_A(T)) dT ,
+\end{equation}
+
+jossa $S_A$ ja $S_B$ ovat materiaalien Seebeck-kertoimet. Nämä ovat yleensä epälineaarisia lämpötilan funktioita, mutta pienille lämpötila-alueille niitä voidaan approksimoida vakioina, jolloin yhtälö \ref{Seebeck} voidaan yksinkertaistaa muotoon 
+
+\begin{equation}\label{Seebeck_approx}
+V = (S_B - S_A) \cdot (T_2 - T_1) .
+\end{equation}
+
+
+Lämpötilaerosta saatavan jännitteen pienuuden vuoksi yleensä keräinelementit muodostetaan useasta keräinsauvasta, jotka ovat lämpövirran suhteen rinnan, mutta sähköisesti sarjassa. Näin ulostulojännitteestä saadaan käyttökelpoisen suuri.
+
+Seebeck-ilmiöön perustuvia energiakeräimistä puhutaan yleensä niiden englanninkielisellä lyhenteellä TEG (Thermoelectric Generator).
+
+\subsection{RF-säteily}
+\label{subs:rf}
+
+Ympäristön radioaaltoja voidaan kerätä sopivalla antennilla ja muuntaa sähköiseksi energiaksi varsin yksinkertaisesti. Parhaana esimerkkinä tästä on RFID-tagit: nämä monesti hyvin pienet ja ohuet tunnisteet vastaavat lukulaitteen kyselyyn lukulaitteen RF-viestin energian avulla. Kerättävä energia on suorassa suhteessa laitteessa olevan induktiosilmukan projektiopinta-alaan radiosignaaliin nähden, jolloin ohut liuska on tunnisteelle tehokkain muoto. Ongelmana kuitenkin on, että tunnisteen tulee olla signaaliin "päin", jotta energiaa saadaan talteen, ja toisaalta pallomainen säteily vaimenee parhaassakin tapauksessa suhteessa etäisyyden neliöön.
+
+\begin{figure}[htcb]
+\includegraphics[angle=270, width=100mm]{rfid.eps}
+\caption{RFID-tagin pinta}
+\label{img:rfid}
+\end{figure}
+
+Radioaaltojen energiaa pystytään keräämään vain kapealta taajuuskaistalta kerrallaan vaaditun vastaanottimen sovituksen vuoksi. Yleensä tämä ei kuitenkaan ole ongelma, koska toimintaympäristössä suurin osa energiasta on joka tapauksessa pienen kaistan alueella, esim. WLAN-taajuudella. WLAN-taajuus, 2,4GHz, on kuitenkin varsin huono valinta energiankeräystarkoituksiin, koska signaali vaimenee nopeasti sen ollessa veden resonanssitaajuuksista. On myös tutkittu mahdollisuutta pitää suljetussa ympäristössä tietyntaajuista säteilylähdettä jatkuvasti päällä; tällöin, kun signaalia ei käytetä edes tiedonsiirtoon, voidaan puhua langattomasta energiansiirrosta. Ratkaisu on kuitenkin ongelmallinen mm. työturvallisuuden takia, sillä mikroaaltosäteilyn vaikutuksia ihmiseen ei ole tutkittu tarpeeksi; tällöin ratkaisu sopii lähinnä miehittämättömiin tiloihin.
+
+\subsection{Valo}
+\label{subs:valo}
+
+Auringonvaloa on menestyksekkäästi käytetty makrokoon laitteiden energianlähteenä jo vuosikymmeniä. Ehkä kuvaavin sovellus, jossa käytetään aurinkokennoja huoltovapauden saavuttamiseksi, on avaruustekniikka; avaruuteen matkaaminen on äärimmäisen kallista, joten satelliiteista ja muista avaruudessa toimivista laitteista on käytännössä pakko tehdä energiaomavaraisia. Toisaalta avaruus on myöskin ihanteellinen toimintaympäristö aurinkokeräimille, koska ilmakehä ja sääilmiöt eivät vaikuta kennolle tulevan valon määrään.
+
+Valoa voidaan muuttaa sähköksi valosähköisen ilmiön avulla: sopivaan puolijohdeliitokseen osuva fotoni saa aikaan sähkövirran liitoksessa (kuva~\ref{img:aurinkokenno}). Ilmiö on sama kuin LED-valoissa, mutta käänteisenä. Puolijohdeliitoksen optimointi on haasteellista: erilaisilla materiaaleilla saadaan aikaan erisuuruisia potentiaalikuoppia liitokseen, ja mitä suurempi potentiaalikuoppa, sitä suuremman jännitteen kenno antaa. Kuitenkin potentiaalikuopan syvyys asettaa vaatimuksia käyttökelpoiselle valolle, sillä fotonin energian (joka on kääntäen verrannollinen valon aallonpituuteen) tulee olla vähintään potentiaalikuopan suuruinen. Onkin pyrittävä mitoittamaan potentiaalikuoppa siten, että suurin osa ympäristön valosta saadaan hyödynnettyä (kuva \ref{img:spektri}), kuitenkin niin, että ulostulojännite (eli saatu energia fotonia kohden) on mahdollisimman suuri; useimmissa sovelluksissa potentiaalikuoppa on mitoitettu mahdollisimman pieneksi, jotta (näkyvän) valon alimmatkin aallonpituudet tulevat hyödynnetyiksi. Fotonin energian ja potentiaalikuopan erotus muuttuu lämmöksi, joka puolestaan laskee edelleen kennon hyötysuhdetta sisäisen vastuksen kasvaessa~\cite{Yu}.~\cite{Mansfield}
+
+\begin{figure}[htcb]
+\includegraphics[width=100mm]{aurinkokenno.eps}
+\caption{Aurinkokennon läpileikkaus}
+\label{img:aurinkokenno}
+\end{figure}
+
+\begin{figure}[htcb]
+\includegraphics[width=50mm]{spektri.eps}
+\caption{Maan pinnalle tulevan fotonivirran spektri}
+\label{img:spektri}
+\end{figure}
+
+Moderneille aurinkokennoille on saatu laboratorioissa yli 40\%:n hyötysuhteita, mutta ko. kennot ovat äärimmäisen kalliita valmistaa ja monesti sisältävät suurta ja hankalasti miniatyrisoitavaa optiikkaa. Ne on yleensä muodostettu kahdesta tai useammasta päällekkäisestä kennokerroksesta, joilla on erisuuruiset potentiaalikuopat, ja lisäksi paremman hyötysuhteen kennot on rakennettava monokidepiikiekoille halvempien polypiikiekkojen sijaan. Käytännön sovelluksissa käytettävillä kennoilla hyötysuhde on yleensä välillä 10-20\%~\cite{Yu}, tosin mikro- ja nanokoon sovelluksissa voi olla perusteltua käyttää suhteessa kalliimpia, paremman hyötysuhteen kennoja tilan säästämiseksi.
+
+Eräs lupaava tutkimussuunta on käyttää hyväksi fotoluminesenssia ja muita keinoja kennolle tulevan valon spektrin muuttamiseksi: spektriä voidaan muokata joko pienemmille aallonpituuksille, jolloin väliaineen avulla useasta matalaenergisestä fotonista saadaan yksi korkeaenerginen fotoni, tai suuremmille aallonpituuksille, jolloin korkeaenerginen fotoni hajotetaan useaksi matalaenergiseksi. Kummallakin menetelmällä saadaan optimoitua kennon hyötysuhdetta, koska fotonien energia siirtyy lähemmäksi potentiaalikuopan suuruutta.\cite{Strumpel}
+
+Yksi mielenkiintoinen lähestymistapa hukkalämmön minimointiin ja siten hyötysuhteen kasvattamiseen on käyttää aurinkokennon takapuolta TEG-keräimen kuumana puolena \cite{Yu}. Tämä sekä alentaa kennon lämpötilaa kasvattaen sen hyötysuhdetta että tuottaa ylimääräistä sähköenergiaa, mutta vaatii tehokkaasti toimiakseen jäähdytyselementin (esim. alumiinisiili) TEG-keräimen kylmälle puolelle siten kasvattaen ratkaisevasti toimilaitteen kokoa. Tietyissä sovelluksissa, joissa laitteen asennuspinta on ympäristöä viileämpi (esim. kylmäputken ulkopinta), ratkaisusta voi olla erityistä hyötyä.
+
+Mikro- ja nanokoon laitteissa hyödytään siitä, että aurinkokennon teho on suorassa suhteessa sen pinta-alaan, mutta ei tilavuuteen; mitä pienemmäksi laitteet tehdään, sitä enemmän laitteella on pinta-alaa suhteessa tilavuuteen. Pienten laitteiden ongelmana kuitenkin on, että niitä käytetään useasti toimintaympäristöissä, joissa ei ole voimakasta valoa tai valaistusolosuhteet vaihtelevat suuresti.
+
+%% osa loppuu
+\clearpage
+%% Seuraava osa
+\section{Soveltaminen mikro- ja nanoskaalaan}
+\label{s:soveltaminen}
+
+\subsection{Miniatyrisointi}
+\label{subs:miniatyrisointi}
+
+Edellä esitetyt energiankeruun metodit on kaikki toteutettu alunperin makrokokoluokassa, useimmat niistä ovat kuitenkin miniatyrisoitavissa eri tekniikoita käyttäen. Erityisesti kiinnostavimpia ovat värähtelyenergiakeräimet, jotka voidaan toteuttaa MEMS-teknologialla piikiekoille; menetelmällä voidaan teoriassa tuottaa suuria eriä hyvin pieniä laitteita, joilla on monesti erinomainen elinikä~\cite{Xiong} ja suhteellisen halpa hinta~\cite{Maeda}. Käytännössä kuitenkin valmistustekniikka on haastavaa ja prototyyppien teko kallista, ja piikiekkojen kysynnän kasvun myötä niiden hinta on ollut jatkuvassa nousussa~\cite{Sark}.
+
+Tavallisten aurinkokennojen miniatyrisointi on suhteellisen triviaalia, koska makrokoon sovelluksetkin on tehty piikiekoille ja kyse on vain pienempien palojen käytöstä. Monimutkaisemmat, optiikkaa sisältävät ratkaisut taas ovat varsin hankalia, eikä niiden miniatyrisoinnissa saavutettu hyöty yleensä korreloi mittavien kustannusten kanssa.
+
+Kaikkia kappaleessa \ref{subs:varahtely} kuvattuja värähtely\-energia\-keräin\-tyyppejä on onnistuneesti miniatyrisoitu MEMS-tek\-no\-logialla; esimerkkejä on mainittu kappaleessa \ref{subs:prototyypit}. 
+
+Laitteita voidaan myös pienentää tiettyyn rajaan asti perinteistä mekaniikkaa soveltaen. Rajoittavana tekijänä on perinteisten materiaalien kestävyys ja valmistustekniikan tarkkuus, sillä myös toleranssit pienenevät samassa suhteessa. Yleisesti ottaen MEMS-tekniikalla saadaan laitteita valmistettua tarkemmin, joka puolestaan vaikuttaa positiivisesti laitteen hyötysuhteeseen ja toimintavarmuuteen.
+
+\subsection{Miniatyrisoinnin vaikutukset}
+\label{subs:vaikutukset}
+
+Energiankeräimien skaalan pienenemisen seurauksena myös niistä saatava energia pienenee. Erityisen merkittävää kuitenkin on, että mikrokoon keräimen tuottamat jännitteet ovat yleensä hyvin pieniä, monesti vain joitakin satoja millivoltteja. Tämä vaatii uusia ratkaisuja jännitteenkasvatuselektroniikalta, sillä tavallisen boost-tyyppisen hakkurimuuntajan käyttö edellyttää tulojännitteeltä hakkuritransistorin kynnysjännitteen ylittämistä (FET-transistoreilla yleensä n. 300 mV, perinteisillä puolijohdeliitostransistoreilla n. 700 mV).
+
+Alaa on tutkittu jonkin verran sekä energiankeräimien yhteydessä että erikseen ja useita erilaisia ratkaisuja on esitetty: mm. Mateu et al. käyttivät suunnittelemassaan lämpökeräimessä~\cite{Mateu} varauspumppua jännitteennostoon hakkurille sopivaksi. Kuvassa \ref{img:tuplaaja} taas on esitetty Xia et al.:n käyttämä jän\-nit\-teen\-tup\-laa\-ja-tasa\-suun\-taaja~\cite{Xia}. Kun tämänkaltaisia ratkaisuja käytetään yhdessä transistorien kanssa, joilla on erityisen pieni kynnysjännite, saadaan jännite nostettua riittävälle tasolle. Yleensä kuitenkin tutkimuksen pääpaino on jännitteenmuunnoksen optimoinnissa, jotta energiaa saadaan kerättyä mahdollisimman korkealla hyötysuhteella; on muistettava, että keräimen kuorma, eli tasasuuntaajan ja jännitteenmuuntimen muodostama kokonaisuus, vaikuttaa suuresti keräimen dynamiikkaan ja siten sen tehokkuuteen.
+
+\begin{figure}[htcb]
+\includegraphics[angle=270, width=100mm]{v-tuplaaja.eps}
+\caption{Jännitteen kaksinkertaistajan piirikaavio}
+\label{img:tuplaaja}
+\end{figure}
+
+Piezosähköisten keräimien tapauksessa elektroniikka monesti eroaa merkittävästi muista keräintyypeistä, koska piezomateriaalin tuottama jännite on kertaluokkaa suurempi virran jäädessä pieneksi. Usein jopa tasasuuntaaja ja buck-tyyppinen hakkuri riittävät, mutta jo hakkurin oikealla ohjauksella voidaan saada yli 300\%:n tehonlisäys verrattuna vain jänniteregulointiin tähtäävään konstruktioon.~\cite{Ottman} Ottaen huomioon, että piezoelementistä saatava keskimääräinen teho $<P(t)>$ on sen ulostulovirran ja tasasuuntaajan kondensaattorin jännitteen tulo,
+
+\begin{equation}
+\label{eq:piezoteho}
+<P(t)> = \frac{2 V_{rect}}{\pi} \cdot ( I_p - V_{rect} \omega C_p ) ,
+\end{equation}
+
+voidaan helposti todeta huipputehon olevan kohdassa
+
+\begin{equation}
+\label{eq:piezohuipputeho}
+V_{rect} = \frac{I_p}{2 \omega C_p} .
+\end{equation}
+
+
+Toinen asia, joka on tutkimisen arvoista mikrokokoluokassa, on värähtelytaajuuden muuntaminen ylöspäin. Lee et al. tutkivat piezosähköistä värähtelyenergiakeräintä ja totesivat ulostulotehon olevan suoraan riippuvainen värähtelyn taajuudesta. He toteuttivat mikrorakenteen, jossa jousitetussa, värähtelevässä levyssä on värähtelysuuntaan nähden poikittaisia uria. Piezomateriaalisen sauvan pää oli sijoitettu siten, että se levyn liikkuessa putoaa jokaiseen uraan ja näin jokaisella syklillä värähtelee urien määrän verran. Tällä konstruktiolla tehotiheys saatiin huomattavasti suuremmaksi kuin resonanssiin perustuvilla ratkaisuilla.~\cite{Lee}
+
+\subsection{Energian varastointi}
+\label{subs:varastointi}
+
+Perinteisesti keräimen tuottamaa ylijäämäenergiaa on varastoitu sähkökemiallisesti akustoon (mm. makrokokoluokan aurinko- ja tuulivoimaratkaisut). Mikrokoossa tämä ei kuitenkaan välttämättä kannata energian pienen määrän ja toisaalta akkujen huonon eliniän takia. Superkondensaattorien käyttöä energian välivarastona onkin tutkittu paljon, ja ne vaikuttavat hyvältä kehityssuunnalta, sillä niiden energiatiheys on akkuihinkin verrattuna hyvä ja ne kestävät jatkuvaa uudelleenlataamista huomattavasti paremmin~\cite{Thounthong}. Toisaalta akkujen jännite pysyy suurin piirtein vakiona tiettyyn varaustasoon asti, kun taas kondensaattorin jännite riippuu lineaarisesti sen varauksesta, mikä täytyy ottaa huomioon ohjauselektroniikassa.
+
+\subsection{Olemassaolevat prototyypit}
+\label{subs:prototyypit}
+
+Martinez-Quijada et al. ovat tehneet sydämentahdistimia varten kaksistaattorisen elektromagneettisen MEMS-\linebreak[1]värähtelykeräimen, joka on kooltaan $4 \times 4 \times 1,5 mm^3$ ja tuottaa kehon sisään asennettuna merkittävän määrän energiaa rintakehän liikkeestä ($118 mW_{RMS}$), tarpeeksi toimimaan luotettavasti sydämentahdistimen ainoana ener\-gian\-lähteenä.~\cite{Martinez-Quijada} Laite hyötyy suuresti ihmiskehon jatkuvasta sisäisestä liikkeestä (hengitys, sydän, suolisto), joka on osoittautunut riittäväksi ympärivuorokautiseksi energianlähteeksi. Kuvassa~\ref{img:martinez} on esitetty laitteen roottorin toiminta.
+
+\begin{figure}[htcb]
+\includegraphics[width=120mm]{martinez-quijada.eps}
+\caption{(a) Laitteen 3D-malli. (b) Roottorin alkuperäinen tasapainotila. (c) Roottori pyörii akselinsa ympäri ulkoisen voiman vaikutuksesta. (d) Roottori oskilloi, kunnes liike-energia on haihtunut. (e) Uusi tasapainotila. \cite{Martinez-Quijada}}
+\label{img:martinez}
+\end{figure}
+
+Bartsch et al. ovat artikkelissaan~\cite{Bartsch} kuvanneet elektrostaattisen mikrokoon värähtelyenergiakeräimen, jossa käytetään kampamaista muuttuvakapasitanssista kondensaattoria. Keräimen resonanssitaajuuden teoreettiset rajat ovat 96-1160 Hz ja pinta-ala $3 \times 6 mm^2$. Laitteen tehonmittauksessa käytettiin $0-10 \mu{}m$:n heräteamplitudeja, ja huomattiin ulostulotehon olevan heräteamplitudin kvadraattinen funktio. Tämä tukee hyvin teoriaa, koska kaavojen (\ref{vk})-(\ref{vk_v}) mukaan teho voidaan ilmaista kapasitanssin muutoksen neliön avulla. Mittauksissa huomattiin myös, että ulostuloteho riippuu vahvasti laitteeseen kytketystä kuormasta. Laitteesta saatiin mitattavia tehoja jo $0,2 \mu{}m_{pp}$:n heräteamplitudilla. Salem et al. taas ovat tehneet nestemäistä kondensaattoriväliainetta hyväksikäyttävän elektrostaattisen keräimen, joka on kokoluokkaa 5mm ja tuottaa 200Hz värähtelystä $10-100 \mu{}W$:n tehon~\cite{Salem}.
+
+Mateu et al. ovat tehneet ihmisen lämpöenergiaa hyväksikäyttävän keräimen langattoman sensorin teholähteeksi.~\cite{Mateu} Laitteen TEG-elementti pystyy hyväksikäyttämään lämpötilaeron, joka on vähintään 5 kelviniä, ja tuottaa 150-250 millivoltin jännitteellä maksimissaan 18 milliampeerin virran. Muuntoelektroniikan avulla laitteen ulostulojännite on 3,7 V ja maksimi\-ulostulo\-teho n. 3 mW.
+
+Taulukossa \ref{tbl:tehotiheydet} on vertailtu eri energiankeräimien sekä paristojen tehotiheyksiä. Koska aurinkokennojen ja useimpien MEMS-keräimien teho riippuu lähinnä pinta-alasta, on taulukkoa varten kennojen paksuudeksi oletettu 2 mm sekä värähtelykeräimien paksuudeksi $1,5-3$ mm. Helsingin ja päiväntasaajan vuotuisina insolaatiokeskiarvoina on käytetty lukemia $110 \frac{W}{m^2}$ ja $280 \frac{W}{m^2}$.~\cite{Energiakasikirja} Aurinkokennojen tapauksessa ei ole otettu huomioon kennon likaantumista ajan myötä.
+
+%% taulukko energia- ja tehotiheyksistä
+\begin{table}[ht]
+\caption{Eri energiankeräimien tehotiheyksiä}
+\label{tbl:tehotiheydet}
+\begin{tabular}{| c | c | c |}
+\hline
+\multirow{2}{*}{ } & Tehotiheys ($\frac{\mu{}W}{cm^3}$) & Tehotiheys ($\frac{\mu{}W}{cm^3}$) \\ & 2 vuoden huoltoväli & 10 vuoden huoltoväli \\
+\hline
+\multirow{3}{*}{ } Aurinkokenno & & \\(vuoden keskiarvo päiväntasaajalla) &  & \\ (20\% hyötysuhde) & 28000 & 28000 \\
+\hline
+\multirow{3}{*}{ } Aurinkokenno & & \\(vuoden keskiarvo Helsingissä) & & \\ (20\% hyötysuhde) & 11000 & 11000 \\
+\hline
+\multirow{2}{*}{ } Aurinkokenno & & \\(sisätiloissa, $10\frac{W}{m^2}$) & 1000 & 1000 \\
+\hline
+\multirow{2}{*}{ } Värähtelykeräin~\cite{Pereyma}\cite{Martinez-Quijada} & & \\ (sähkömagneettinen) & $800-2500000$ & $800-2500000$ \\
+\hline
+\multirow{2}{*}{ } Värähtelykeräin & & \\ (sähköstaattinen) & & \\
+\hline
+\multirow{2}{*}{ } Värähtelykeräin\cite{Xia} & & \\ (piezosähköinen) & 2200 & 2200 \\
+\hline
+\multirow{2}{*}{ } TEG-keräin \cite{Strodeur}\cite{Funahashi} & & \\ $\Delta{}T = 10 K$ & 15-40 & 15-40 \\
+\hline
+\multirow{2}{*}{ } RF-keräin 20m etäisyydellä & & \\ 1000mW:n säteilylähteestä & 0,2 & 0,2 \\
+\hline
+Litiumparisto \cite{Pereyma} & 22 & 1,5 \\
+\hline
+Litiumakku \cite{Pereyma} & 3,5 & 0\\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+%% Seuraava osa
+\section{Tutkimuskohde}
+
+Tässä osassa kuvataan tarkasteltava langaton sensori sekä sen toimintaympäristö. Sen jälkeen pohditaan, miten ne rajoittavat energiankeruulaitteen ominaisuuksia.
+
+Tarkasteltavana laitteena on joukko langattomia lämpötilasensoreja asennettuna valvomaan paperikoneen eri osien lämpötilaa. Sijainti jatkuvasti toimivan suuren koneen sisällä tekee sekä kaapeloinnista että huollosta haastavaa, joten on päädytty langattomaan, energiakeräimellä varustettuun ratkaisuun.
+
+\subsection{Laite}
+
+\begin{figure}[htcb]
+\includegraphics[angle=270, width=\textwidth]{telos.eps}
+\caption{Telos-moduuli \cite{Telos}}
+\label{img:telos}
+\end{figure}
+
+Laitteen pohjana on University of California, Berkeleyn kehittämä, äärimmäisen vähän energiaa kuluttava langaton moduuli nimeltään Telos~\cite{Telos}. Laite lähettää mittaustietoa tietyin väliajoin, muulloin laite toimii virransäästötilassa, jossa energiankulutus on minimaalinen. Moduulin keskeisimmät ominaisuudet on listattu taulukossa~\ref{tbl:telos} ja moduuli on esitetty kuvassa~\ref{img:telos}.
+
+Yleensä kommunikointi- ja anturimoduulit ovat erillisiä yksiköitä, mutta Telos-moduulissa ne on integroitu samalle piirille. Tämä sekä yksinkertaistaa koko laitteen rakennetta että optimoi energiankulutusta, ja ratkaisulla päästään kokonaistehonkulutusarvoihin $15 \mu{}W$ lepo- ja $41 mW$ aktiivitilassa. Tyypillisen toimintasuhteen ollessa 0,5\% saadaan keskimääräiseksi tehonkulutukseksi n. 0,22~mW. Moduulin käyttöjännite on myös huomattavan pieni, vain 1,8~V.
+
+\begin{table}[ht]
+\caption{Telos-moduulin ominaisuuksia~\cite{Telos}}
+\label{tbl:telos}
+
+\begin{tabular}{| l | l |}
+\hline
+Ohjelmamuisti & 48 KB \\
+\hline
+RAM & 10 KB \\
+\hline
+Käyttöjännite & 1,8 V \\
+\hline
+Tehonkulutus (aktiivitila) & 41 mW \\
+\hline
+Tehonkulutus (lepotila) & 15 $\mu$W \\
+\hline
+Heräämisaika & $6 \mu{}s$ \\
+\hline
+Datan siirtonopeus & 250 kb/s \\
+\hline
+Koko & $ 65 \times 32 \times 13 mm^3$ \\
+\hline
+\end{tabular}
+\end{table}
+
+Yksinkertaisuuden vuoksi kommunikointimoduuli ja energiankeräin pyritään integroimaan yhdeksi paketiksi, jolloin käsittely ja käyttöönotto on huomattavan helppoa; joissakin käyttötapauksissa kuvatunlaisia laitteita voisi jopa "kylvää" ~ympäristöön esim. lentokoneesta.
+
+\subsection{Toimintaympäristö}
+
+Toimintaympäristönä toimii tehdashalli, jossa on sähkömoottoreista ja materiaalivirroista johtuvaa värinää rakenteissa, loisteputkivalaistus ja lämpötila pidetään ilmastoinnilla maksimissaan $25\,^{\circ}\mathrm{C}$:ssa. Sovelluskohde on tyypillinen paperikone, jonka seisokit maksavat suuria summia, ja joka toimii itsenäisesti henkilökunnan lähinnä tarkkaillessa prosessia valvomoista. Paperikoneen mittasuhteet ovat suuria: pituutta voi olla parhaimmillaan satoja metrejä ja leveyttäkin kymmeniä.
+
+\subsection{Vaatimukset energiankeräimelle}
+\label{subs:vaatimukset}
+
+Energiankeräimen optimaalisen energianlähteen ja siten keräimen tyypin määrittää suurimmaksi osaksi se, missä muodossa energiaa on saatavilla toimintaympäristössä; jos varteenotettavia vaihtoehtoja on useampia, voidaan alkaa tarkastella eri keräintyyppien ominaisuuksia. Edellisessä kappaleessa kuvatussa toimintaympäristössä realistisia lähestymissuuntia ovat lähinnä värähtely- ja mahdollisesti lämpöenergiakeräimet, koska sisävalaistus on harvoin tarpeeksi voimakasta tarpeellisen energiamäärän tuottamiseksi aurinkokennoilla, varsinkaan jos halutaan minimoida laitteen koko. Tietyissä tapauksissa tosin kennoa optimoimalla loisteputkivalosta voidaan saada tarpeeksi tehoa, koska loisteputken valo on keskittynyt vain muutamalle taajuudelle. Toisaalta myös energiansiirto radioaaltoja käyttäen on mahdollisuuksien rajoissa, koska henkilökunta ei liiku paljoa hallin alueella. Koneen mittasuhteet ovat kuitenkin niin isoja, että suhteellisen suuritehoisiakin radiolähettimiä tarvittaisiin useampia.
+
+Moduulin keskimääräinen tehonkulutus määrää energiankeräimeltä vaaditun kapasiteetin. Koska toimintavarmuus on tärkeää, on syytä vaatia tehonkulutukseen nähden ainakin kaksinkertainen jatkuva kapasiteetti ympäristön olojen vaihtelun varalta. Lisäksi toimintavarmuuden kannalta kannattaa harkita sellaisen keräimen valitsemista, jossa ei ole lainkaan liikkuvia osia, sillä mekaaninen rasitus saattaa heikentää keräimen tehoa ajan myötä.
+
+Moduulin pienen käyttöjännitteen ansiosta energiankeräimen jännitteenhallintaelektroniikkaa voidaan monissa tapauksissa yksinkertaistaa. Varsinkin jatkuvan energianlähteen tapauksessa ei ole tarvetta käyttää energiavarastona akkua, jonka jännite olisi moduuliin nähden liian suuri (Li-ion -akuilla yli 3~V), vaan tehontasaus voidaan hoitaa pienijännitteisellä superkondensaattorilla. Moduulin mittausjakson ei tarvitse olla vakio, vaan voidaan määrittää kondensaattorille vähimmäisenergia- eli jännitetaso, jolla mittaaminen ja mittaustiedon lähettäminen varmasti onnistuvat, ja herättää moduuli aina tämän tason ylittyessä. Aktiivitilassa kondensaattori tyhjenee nopeasti tehonkulutuksen ollessa huomattavasti keräimen tuottamaa tehoa suurempi. Energiankeräimen mitoittamista varten pitää vain määrittää mittausvälille maksimiaika.
+
+Suuret sähkömoottorit tuottavat värinää pääsääntöisesti 50-500Hz taajuusalueella, joten värähtelyenergiakeräintä käytettäessä on toimintaympäristön värähtelyspektri selvitettävä ja viritettävä keräimen resonanssitaajuus lähelle spektrin dominoivaa taajuutta. Käytettäessä piezosähköistä MEMS-tekniikalla tehtyä laitetta tämä tapahtuu yleensä määrittämällä värähtelevän piezomateriaalisen sauvan paksuuden ja pituuden suhde. Paksuus taas on tärkeä suure, koska se määrittää rasituksen, jolle materiaali altistuu; se puolestaan vaikuttaa ratkaisevasti sekä laitteen hyötysuhteeseen että elinikään. Näiden määritysten jälkeen laitteen teho riippuu sauvan leveydestä, joka ei vaikuta edellä mainittuihin suureisiin.~\cite{Xia}
+
+\clearpage
+%% Seuraava osa
+\section{Tulokset}
+
+Paperikone on järjestelmänä suuri ja monipuolinen. Yhteisenä nimittäjänä useimmissa mittauskohteissa on, että niissä on rakenteiden kautta välittyvää värinää, muuten kohteet saattavat vaihdella suurestikin. Jotta samaa moduulia voitaisiin käyttää joka kohteessa, on siis perusteltua valita värähtelyjä keräävä energianlähde. Laite tulisi mitoittaa ja virittää niin, että se tuottaa keskimäärin noin 0,4 milliwatin tehon rakenteista mitatulla dominoivalla värähtelytaajuudella. Xia et al. rakensivat vastaavan laitteen~\cite{Xia}, jonka resonanssitaajuudeksi viritettiin 155,5~Hz, tehontuotto oli 0,173~mW ja mitat olivat $50 \times 3 \times 3,5 mm$, jonka saisi suoraan tarpeeksi tehokkaaksi kasvattamalla laitteen leveyden 6 millimetriin. Tällöinkin keräin mahtuisi koteloinnissa hyvin USB-liittimen viereen (kuva \ref{img:telos}) laitteen pitkittäissuunnassa.
+
+Kappaleessa \ref{subs:prototyypit} esitelty sähkömagneettinen keräin on suunniteltu toimimaan huomattavasti pienemmillä taajuuksilla ja on huomattavan ylimitoitettu, mutta samankaltaista konstruktiota virittämällä voitaisiin päästä hyvään lopputulokseen. Sähköstaattisia menetelmiä ei harkita tähän tarkoitukseen, koska kondensaattorin esivaraaminen asettaa pitkällä aikavälillä suuria vaatimuksia vuotovirran määrälle ja näin heikentää luotettavuutta.
+
+Piezosähköinen keräin tuottaa sopivalla ulkoisen värähtelyn amplitudilla valmiiksi tarpeeksi suuren jännitteen kondensaattorin lataamista varten, joten ohjauselektroniikan tulee toimia maksimoidakseen keräimen hyötysuhde. Muuttamalla keräimen ja kondensaattorin välissä olevan hakkurin toimintajaksoa voidaan dynaamisesti muokata tasasuuntaajan kondensaattorin jännitettä, joka vaikuttaa suuresti keräimen ulostulotehoon kaavojen (\ref{eq:piezoteho}-\ref{eq:piezohuipputeho}) mukaisesti. Lisäksi kuvassa \ref{img:seuranta} on esitelty eräs ratkaisu mittaus-leposyklin hallinnalle.
+
+\begin{figure}[htcb]
+\includegraphics{seuranta.eps}
+\caption{Yksinkertainen mittaus-leposyklin hallintapiiri \cite{Xia}}
+\label{img:seuranta}
+\end{figure}
+
+
+
+
+Tulevaisuudessa on tutkimuksen kohteena on varmasti energiankeräimen integroiminen samalle piirille anturin ja radiolähettimen kanssa. Massatuotantoa ajatellen ajatuksessa on lukuisia ongelmia, suurimpana todennäköisesti tarve värähtelykeräimien virittämiselle tietylle resonanssitaajuudelle; kehitteillä onkin useita menetelmiä, joilla resonanssitaajuutta pystyttäisiin mahdollisesti säätämään dynaamisesti tietyissä rajoissa.
+
+\clearpage
+%% Seuraava osa
+\section{Yhteenveto}
+
+Tässä työssä kartoitettiin miniatyrisoiduista energiankeräimistä tehtyä tutkimusta ja suunniteltiin sen pohjalta optimaalinen järjestelmä langattomalle lämpötilasensorille. Tulosten pohjalta voidaan sanoa, että keräinten kehitys on ollut nopeaa viimeisten kymmenen vuoden ajan, ja niistä on tullut sekä tehokkaampia että robustimpia. Yksikään menetelmä ole noussut selkeästi muita paremmaksi, vaan kehitys on ollut tasaista joka rintamalla. Tästä johtuen ensisijaisesti toimintaympäristö ja sen tarjoamat energianlähteet määrittävät optimaalisen energiankeräimen tyypin ja ominaisuudet, ei niinkään sovelluskohde. Ala on jatkuvan kehityksen alaisena, ja mittavaa tutkimusta tehdään sekä olemassaolevien metodien parantamiseksi että täysin uusien kehittämiseksi. Varsinkin kehittyvä MEMS-tekniikka mahdollistaa monet uudenlaiset konstruktiot.
+
+\clearpage
+%% Lähdeluettelo
+\addcontentsline{toc}{section}{Viitteet}
+%\addcontentsline{toc}{section}{References}
+\bibliography{energiankeruu}
+
+
+%%%%% Liitteet
+%\appendix
+
+%\clearpage
+%\addcontentsline{toc}{section}{Liite A}
+%\section*{Liite A \label{LiiteA}}
+
+%% Liitteiden kaavat, taulukot ja kuvat numeroidaan omana kokonaisuutenaan
+%\renewcommand{\theequation}{A\arabic{equation}}
+%\setcounter{equation}{0}
+%\renewcommand{\thefigure}{A\arabic{figure}}
+%\setcounter{figure}{0}
+%\renewcommand{\thetable}{A\arabic{table}}
+%\setcounter{table}{0}
+
+
+
+\end{document}
