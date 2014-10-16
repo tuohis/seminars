@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[finnish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips]{graphicx}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+
+%% parskip pakettin avulla kappaleenvaihdot tehd‰‰n tyhj‰ll‰ rivill‰
+%% ilman sisennyksi‰
+\usepackage{parskip}
+
+%% icomma-paketti muuttaa matematiikkamoodin syntaksia niin, ett‰ pilkku
+%% ladotaan tavalliseen tapaan, jos sen j‰lkeen on kirjoitettu v‰lilyˆnti,
+%% ja desimaalipilkkuna muuten.
+\usepackage{icomma}
+
+%% verbatim paketin mukana tulee comment environmentti
+\usepackage{verbatim}
+
+%% subfig paketti antaa subfloat komennot useiden kuvien liitt‰miseen
+%% yhteen figure environmentiin
+\usepackage{subfig}
+
+%% caption paketilla voi s‰‰t‰‰ floatien captionien tyyli‰
+%% hyv‰t arvot captionsetupille: margin=10pt,font=small,labelfont=bf
+\usepackage{caption}
+\captionsetup{margin=1cm,font=small,labelfont=bf}
+
+%% asetetaan listoille labeli
+\def\lstlistingname{Listaus}
+
+% t‰m‰ paketti antaa url-komennon
+\usepackage{url}
+
+%% listingsutf8 paketti mahdollistaa UTF-8 listausten lataamisen
+%\usepackage{listingsutf8}
+
+\begin{document}
+
+% Kansilehti
+\begin{titlepage}
+\pagestyle{empty}
+
+\begin{tabbing}
+AS-74.3135 \` 26.04.2009†\\
+Servotekniikka
+\end{tabbing}
+
+\vspace*{7cm}
+\begin{center}
+\LARGE{\textbf{Visual Servo}}
+\end{center}
+\vfill
+
+\begin{flushright}
+\begin{tabular}{ll}
+Kalle Kiet‰v‰inen & 53814H\\
+Mikko Tuohimaa    & 53737F\\
+\end{tabular}
+\end{flushright}
+
+\end{titlepage}
+\setcounter{page}{1}
+
+% Sis‰llysluettelo
+\pagestyle{empty}
+\tableofcontents
+\clearpage
+\pagestyle{plain}
+
+% Teksti
+
+\input{johdanto}
+
+\input{algoritmit}
+
+\input{kayttokohteet}
+
+\input{yhteenveto}
+
+%% L‰hdeluettelo
+\clearpage
+\addcontentsline{toc}{section}{Viitteet}
+\bibliographystyle{unsrt_fin}
+\bibliography{visualservo_references}
+
+\end{document}

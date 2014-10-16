@@ -1,0 +1,67 @@
+\subsection{Hahmontunnistus}
+
+Hahmontunnistuksessa kuvainformaatiosta yritetään poimia esiin erilaisia piirteitä, joita
+voidaan luokitella ja näinollen saada kone ``ymmärtämään'' näkemänsä kuva. Tällaisia
+piirteitä voi olla esimerkiksi kuvassa olevat ihmiset, tietty esine joka robotin tulee
+paikallistaa tai mahdolliset tiellä olevat esteet. Sen lisäksi että kuvasta voidaan
+tunnistaa kohteita, niiden liikettä voidaan myös seurata tai estimoida muutamien kuvien
+perusteella. Tässä kappaleessa tutustutaan muutamaan peruskäsitteeseen ja menetelmään,
+jotka liittyvät hahmontunnistukseen.
+
+\subsubsection{Segmentointi}
+
+Erilaisten hahmontunnistusmenetelmien perustana on yleensä kuvan segmentointi, eli
+jakaminen osiin erilaisten ominaisuuksien perusteella. Segmentoinnin päämääränä on jakaa
+kuva pienempiin osiin siten, että yksittäisten osien sisältämällä kuvainformaatiolla on
+jotakin yhteistä. Yksittäiseen osaan kuuluvilla pikseleillä voi olla esimerkiksi
+samantapainen väri, kirkkaus tai tekstuuri. Segmentointia käytetään yleensä
+konenäkösovelluksissa prosessoinnin alkuvaiheessa. Segmentoidusta kuvasta voidaan edelleen
+tunnistaa tarkemmin kiinnostavia kohteita kehittyneemmillä menetelmillä.
+
+Segmentointi voidaan suorittaa erilaisilla menetelmillä sovelluksen tarpeiden mukaan.
+Yksinkertaisin menetelmä on kuvan kynnystäminen kirkkauden tai tietyn värikomponentin
+mukaan. Kynnystyksellä tarkoitetaan kuvan pikseleiden jakamista yleensä kahteen osaan sen
+mukaan, onko kyseisen pikselin arvo suurempi vai pienempi kuin asetettu kynnysarvo.
+Kynnystykseen perustuvissa menetelmissä asetetulla kynnysarvolla on erittäin suuri
+merkitys lopputulokseen. Liian suuri kynnysarvo aiheuttaa sen, että haluttuja piirteitä ei
+saada esiin kuvasta, ja vastaavasti liian pieni kynnysarvo sekoittaa halutut piirteet ei
+haluttuihin piirteisiin. Kynnystys on toimiva menetelmä yksinkertaisissa kuvissa, joissa
+halutut kohteet erottuvat selkeästi taustasta.
+
+Hieman kehittyneemmissä menetelmissä yritetään muodostaa yhtenäisistä piirteistä koostuvia
+alueita. Eräs tällainen algoritmi on K-means~\cite{Alsabti_1998}. K-means algoritmi on
+perusmuodossaan seuraavanlainen:
+\begin{enumerate}
+	\label{lst:k-means}
+	\item Valitse joukko alueiden keskipisteitäpisteitä (esim. satunnaisesti)
+	\item Liitä jokainen kuvan piste siihen alueeseen, joka minimoi varianssin kyseisen
+				pisteen ja alueen keskipisteen välillä \label{lst:k-means_assign}
+	\item Laske alueiden keskipisteet uudelleen
+	\item Mikäli alueiden keskipisteet muuttuivat edellisessä kohdassa, palaa
+				kohtaan~\ref{lst:k-means_assign}
+\end{enumerate}
+Algoritmin kohdassa~\ref{lst:k-means_assign} varianssilla tarkoitetaan suuretta, joka voi
+riippua pikseleiden väristä, kirkkaudesta, tekstuurista ja sijainnista. Näitä
+ominaisuuksia voidaan painottaa erilaisilla kertoimilla.
+
+Erilaisia reunantunnistusmenetelmiä on tutkittu ja kehitetty paljon, ja niillä saavutetaan
+hyviä tuloksia. Reunat jakavat kuvan yleensä melko hyvin yhtenäisiksi alueksi, joten
+reunantunnistusalgoritmeja voidaan käyttää joko sellaisenaan kuvan segmentoimiseen tai
+jonkun muun menetelmän pohjana. Reunantunnistuksessa reunoihin tulee yleensä pieniä
+aukkoja kohtiin, joissa kuuluisi olla reuna. On kuitenkin olemassa algoritmeja, jotka
+pystyvät tunnistamaan ja täyttämään tällaiset aukot~\cite{Pathegama_2004}.
+
+\subsubsection{Mallinnesovitus}
+
+Hahmontunnistusta voidaan suorittaa etsimällä kuvasta kohteita, jotka vastaavat jotakin
+toista kuvaa. Tätä kutsutaan mallinnesovitukseksi~(engl.~template matching). Kuvasta
+voidaan siis etsiä esimerkiksi tietyn henkilön kasvoja yrittämällä sovittaa siihen
+mallinnekuvaa kyseisistä kasvoista. Sovittamisessa mallinnekuvaa liu'utetaan tutkittavan
+kuvan päällä. Mikäli mallinnekuva sopii johonkin kohtaan kuvaa riittävän hyvin, on hahmo
+tunnistettu kyseisestä kohdasta. Mallinnekuvaa joudutaan yleensä pyörittämään ja sen kokoa
+muuttamaan, jotta mallinne sopisi kuvaan. Tämä on laskennallisesti erittäin raskasta.
+
+Mallinnesovituksessa voidaan hyödyntää kuvan segmentoimista. Tällöin mallinnetta voidaan
+yrittää ainakin ensiksi sovittaa vain tiettyihin kuvan osiin, jotka ovat tietyn
+muotoisia, värisiä tai tietyssä paikassa. Tämä saattaa suotuisassa tilanteessa nopeuttaa
+mallinnesovitusta huomattavasti.

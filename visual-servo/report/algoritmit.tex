@@ -1,0 +1,73 @@
+\section{Algoritmit}
+
+Kaikkien kuvapohjaisten säätösysteemien tavoitteena on minimoida erosuure \textbf{e}(t), 
+joka tyypillisesti määritellään 
+
+\begin{equation}
+\textbf{e}(t) = \textbf{s}(\textbf{m}(t), \textbf{a}) - \textbf{s}^* .
+\label{eq:e}
+\end{equation}
+
+Tämä yleinen muoto kattaa lähes kaikki säätöalgoritmit: \textbf{m} on 
+kuvasta tehdyistä mittauksista muodostettu vektori ja \textbf{a} puolestaan sisältää 
+mahdollisen a priori -tiedon systeemistä, kuten kameran ominaisuuksia tai näkökentässä 
+olevien kappaleiden 3D-malleja. Näistä lasketaan \textbf{s}, joka on joukko kuvan 
+visuaalisia ominaisuuksia. Kameran ja/tai säädettävän kappaleen haluttuun paikkaan ja 
+asentoon liittyvät visuaaliset ominaisuudet muodostavat $\textbf{s}^*$:n, jolloin 
+\textbf{e} saadaan laskettua. $\textbf{s}^*$ voi olla staattinen tai ajan funktio.
+Eri säätö\-algo\-ritmit eroavat toisistaan lähinnä siinä suhteessa, miten \textbf{s} on 
+valittu.~\cite{Chaumette_2006}
+
+\subsection{Kuvapohjainen säätö}
+
+Kuvapohjaisessa säädössä tarkasteltavana suureena on suoraan kuvasta saatu informaatio,
+kuten tiettyjen objektien kuvakoordinaatit; tarkemmin ottaen kolmiulotteisessa avaruudessa
+olevien pisteiden koordinaattien projektio kuvatasolle. Käyttämällä hyväksi kameran 
+tiedettyjä ominaisuuksia, kuten polttoväliä ja dimensioiden suhdetta, 2D-koordinaateista 
+voidaan estimoida objektin 3D-paikka. Kuitenkaan tätä ei yleensä tehdä, vaan tyydytään 
+käyttämään $\textbf{s}^*$:nä joukkoa ennaltamäärättyjä pisteiden paikkoja kuvatasolla.
+
+Säädön tuloksena on kameran reitti, joka kulkee pienintä virhettä kohti jokaisessa pisteessä.
+Seurauksena on se, että reitti ei ole välttämättä suora eikä tasanopeuksinen, mutta 
+kuitenkin joka tilanteesta (paitsi joissain tapauksissa $\pi$ radiaanin kierrosta)
+on yksiselitteinen suunta tiedossa.
+
+\subsection{Paikkapohjainen säätö}
+
+Paikkapohjaisessa säädössä kuvan ominaisuuksista ensin arvioidaan kameran ja/tai 
+objektin paikka ja orientaatio ulkopuolisessa koordinaatistossa, joiden perusteella 
+muodostetaan erosuure. Paikka\-pohjainen säätö perustuu siis aina estimaatioon ja on 
+siten tietyissä sovelluksissa kuvapohjaista epävakaampi.
+Tämä säätöalgoritmi tarvitsee toimiakseen a priori -tietoa ympäristöstään, kuten kameran 
+parametrit ja tarkasteltavan objektin 3D-mallin, jotta havainnoista voidaan laskea edellämainitut
+asiat.
+
+Paikkapohjaista säätöä käytettäessä on luonnollista, että säädön tuloksena kameran liikkeet
+ovat suoria, vaikka kuva välillä näennäisesti menisikin huonompaan suuntaan. Oleellista on,
+että ne objektit, joista asento ja paikka arvioidaan, pysyvät kuvassa jatkuvasti, mikä 
+tällä säätöalgoritmilla ei aina toteudu. Sitä onkin korjattu esim. lisäämällä virheeseen termi, 
+joka sakottaa liian lähelle kuvan reunaa joutuvasta objektista.
+
+\subsection{Syvyysnäkö}
+
+Syvyysnäkö voidaan toteuttaa monella tapaa, ja monesti se helpottaa visual servo 
+-käyttöä poistamalla (ainakin suurelta osin) epävarmuuden kuvan syvyysparametrien
+arvioinnista.
+
+Ihmiselle luonnollisin tapa toteuttaa syvyysnäkö on kahdella kameralla, ns. stereonäkö.
+Kun tiedetään kameroiden välinen etäisyys, voidaan kummankin kameran kuvassa näkyvien 
+objektien etäisyys laskea kolmiomittaamalla. Erityisesti kuvapohjaista säätöä on 
+luonnollista laajentaa stereokamerasysteemiksi, tällöin on vain otettava huomioon se,
+että kummallakin kuvalla on oma suhteensa todelliseen maailmaan.
+
+Toinen tapa toteuttaa eräänlainen stereonäkö on ottaa samalla kameralla uusi kuva
+määritellyn liikkeen jälkeen. Tällä ei saavuteta samoja reaaliaikaetuja kuin kahden
+kameran järjestelmässä, mutta toisaalta kuvia voi ottaa eri suunnista ja eri 
+etäisyyksiltä, kunnes tarkkuus on toivottu.
+
+Jos toimintaympäristö on kontrolloitu, sen 3D-malli voi olla kuvan\-käsittely\-tieto\-koneen
+muistissa, jolloin eräänlainen syvyysnäkö on mahdollinen: kuvasta voidaan päätellä
+mitkä mallin piirteistä ovat näkyvissä ja polttovälin sekä piirteiden suhteellisen koon
+perusteella määrittää etäisyys piirteisiin.
+
+\input{hahmontunnistus}
