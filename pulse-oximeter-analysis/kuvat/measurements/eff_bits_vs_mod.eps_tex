@@ -1,0 +1,79 @@
+%% Creator: Inkscape 0.48.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'eff_bits_vs_mod.eps' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}
+    \renewcommand\color[2][]{}%
+  }
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}
+    \renewcommand\transparent[1]{}%
+  }
+  \providecommand\rotatebox[2]{#2}
+  \ifx\svgwidth\undefined
+    \setlength{\unitlength}{486.8571167pt}
+  \else
+    \setlength{\unitlength}{\svgwidth}
+  \fi
+  \global\let\svgwidth\undefined
+  \makeatother
+  \begin{picture}(1,0.6673765)%
+    \put(0,0){\includegraphics[width=\unitlength]{eff_bits_vs_mod.eps}}%
+    \put(0.08115681,0.04861138){\makebox(0,0)[lb]{\smash{0.02}}}%
+    \put(0.16656955,0.04861138){\makebox(0,0)[lb]{\smash{0.04}}}%
+    \put(0.25198064,0.04861138){\makebox(0,0)[lb]{\smash{0.06}}}%
+    \put(0.33739174,0.04861138){\makebox(0,0)[lb]{\smash{0.08}}}%
+    \put(0.42845336,0.04861138){\makebox(0,0)[lb]{\smash{0.1}}}%
+    \put(0.50821599,0.04861138){\makebox(0,0)[lb]{\smash{0.12}}}%
+    \put(0.59362708,0.04861138){\makebox(0,0)[lb]{\smash{0.14}}}%
+    \put(0.67904023,0.04861138){\makebox(0,0)[lb]{\smash{0.16}}}%
+    \put(0.76445133,0.04861138){\makebox(0,0)[lb]{\smash{0.18}}}%
+    \put(0.8555109,0.04861138){\makebox(0,0)[lb]{\smash{0.2}}}%
+    \put(0.93544606,0.04861138){\makebox(0,0)[lb]{\smash{0.22}}}%
+    \put(0.05514014,0.06589941){\makebox(0,0)[lb]{\smash{13.5}}}%
+    \put(0.07225646,0.1333385){\makebox(0,0)[lb]{\smash{14}}}%
+    \put(0.05514014,0.20060669){\makebox(0,0)[lb]{\smash{14.5}}}%
+    \put(0.07225646,0.26787489){\makebox(0,0)[lb]{\smash{15}}}%
+    \put(0.05514014,0.33514309){\makebox(0,0)[lb]{\smash{15.5}}}%
+    \put(0.07225646,0.40241128){\makebox(0,0)[lb]{\smash{16}}}%
+    \put(0.05514014,0.46967948){\makebox(0,0)[lb]{\smash{16.5}}}%
+    \put(0.07225646,0.53694768){\makebox(0,0)[lb]{\smash{17}}}%
+    \put(0.05514014,0.60421587){\makebox(0,0)[lb]{\smash{17.5}}}%
+    \put(0.13712806,0.6466657){\makebox(0,0)[lb]{\smash{Effective Bits Needed to Achieve}}}%
+    \put(0.43855119,0.6466657){\makebox(0,0)[lb]{\smash{σ}}}%
+    \put(0.45087514,0.63639574){\makebox(0,0)[lb]{\smash{SpO}}}%
+    \put(0.48373899,0.62612579){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.49629625,0.6466657){\makebox(0,0)[lb]{\smash{< 1 as a Function of IR Modulation. SpO}}}%
+    \put(0.86081798,0.63639574){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.87559934,0.6466657){\makebox(0,0)[lb]{\smash{= 70.
+IR Modulation (%)}}}%
+    \put(0.04110399,0.246651){\rotatebox{90}{\makebox(0,0)[lb]{\smash{System Effective Bits}}}}%
+    \put(0.48955959,0.55851458){\makebox(0,0)[lb]{\smash{Best System Performance Achieved: 16.9 Eff. Bits}}}%
+    \put(0.48973007,0.4390401){\makebox(0,0)[lb]{\smash{Design Specification: 16 Eff. Bits}}}%
+  \end{picture}%
+\endgroup

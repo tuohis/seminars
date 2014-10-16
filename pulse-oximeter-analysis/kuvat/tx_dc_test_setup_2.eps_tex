@@ -1,0 +1,59 @@
+%% Creator: Inkscape 0.48.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'tx_dc_test_setup_2.eps' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}
+    \renewcommand\color[2][]{}%
+  }
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}
+    \renewcommand\transparent[1]{}%
+  }
+  \providecommand\rotatebox[2]{#2}
+  \ifx\svgwidth\undefined
+    \setlength{\unitlength}{360.425pt}
+  \else
+    \setlength{\unitlength}{\svgwidth}
+  \fi
+  \global\let\svgwidth\undefined
+  \makeatother
+  \begin{picture}(1,0.427204)%
+    \put(0,0){\includegraphics[width=\unitlength]{tx_dc_test_setup_2.eps}}%
+    \put(0.01118718,0.01395051){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Transmitter}}}%
+    \put(0.20460966,0.33579278){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{TXP}}}%
+    \put(0.20112168,0.07863604){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{TXN}}}%
+    \put(0.84195247,0.01236506){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Receiver}}}%
+    \put(0.7373141,0.29457159){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{RXP}}}%
+    \put(0.73921663,0.10907628){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{RXN}}}%
+    \put(0.27912482,0.19627494){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20 $\Omega$}}}%
+    \put(0.5169393,0.25017955){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20 $k\Omega$}}}%
+    \put(0.51464641,0.15343736){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20 $k\Omega$}}}%
+    \put(0.42656984,0.05517168){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{47 $\mu{}F$}}}%
+    \put(0.42325683,0.3516161){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{47 $\mu{}F$}}}%
+  \end{picture}%
+\endgroup

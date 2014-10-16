@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3925"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="311.37245"
+     inkscape:cy="882.70233"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1406"
+     inkscape:window-height="783"
+     inkscape:window-x="2132"
+     inkscape:window-y="36"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3772"
+       transform="translate(23.233504,2.0203126)">
+      <rect
+         y="19.98628"
+         x="258.59906"
+         height="41.416256"
+         width="143.44167"
+         id="rect2989"
+         style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text2985"
+         y="45.348217"
+         x="310.67633"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+           y="45.348217"
+           x="310.67633"
+           id="tspan2987"
+           sodipodi:role="line">Assp</tspan></text>
+    </g>
+    <g
+       id="g3889"
+       transform="translate(0,-4.6925812)">
+      <g
+         transform="translate(42.582825,-49.013855)"
+         id="g3854">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0"
+           id="rect2989-1"
+           width="143.44167"
+           height="41.416256"
+           x="28.981585"
+           y="167.97363" />
+        <text
+           xml:space="preserve"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+           x="47.304466"
+           y="193.2301"
+           id="text2985-2"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan2987-0"
+             x="47.304466"
+             y="193.2301"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">UartManager</tspan></text>
+      </g>
+      <g
+         transform="translate(61.512587,-76.287964)"
+         id="g3859">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0"
+           id="rect2989-0"
+           width="143.44167"
+           height="41.416256"
+           x="220.31998"
+           y="195.24774" />
+        <text
+           xml:space="preserve"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+           x="227.41484"
+           y="220.61407"
+           id="text2985-1"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan2987-4"
+             x="227.41484"
+             y="220.61407"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">SensorManager</tspan></text>
+      </g>
+      <g
+         transform="translate(72.730942,-75.277817)"
+         id="g3864">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1.08581674;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6.51490015, 1.08581669;stroke-dashoffset:0"
+           id="rect2989-6"
+           width="169.11742"
+           height="41.416256"
+           x="418.57449"
+           y="194.23759" />
+        <text
+           xml:space="preserve"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+           x="428.24161"
+           y="219.60393"
+           id="text2985-0"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan2987-7"
+             x="428.24161"
+             y="219.60393"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">MemChipManager</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g3874"
+       transform="translate(51.308364,-139.89691)">
+      <rect
+         y="326.56757"
+         x="228.5242"
+         height="41.416256"
+         width="143.44167"
+         id="rect2989-3"
+         style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text2985-3"
+         y="351.9295"
+         x="251.06583"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+           y="351.9295"
+           x="251.06583"
+           id="tspan2987-5"
+           sodipodi:role="line">AfeManager</tspan></text>
+    </g>
+    <g
+       id="g3903"
+       transform="translate(-2.1428571,-38.571429)">
+      <g
+         transform="translate(55.40197,-19.697974)"
+         id="g3869">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0"
+           id="rect2989-17"
+           width="143.44167"
+           height="41.416256"
+           x="16.162439"
+           y="318.48636" />
+        <text
+           xml:space="preserve"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+           x="46.016571"
+           y="343.8483"
+           id="text2985-7"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan2987-77"
+             x="46.016571"
+             y="343.8483"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">UartDriver</tspan></text>
+      </g>
+      <g
+         transform="translate(62.101868,-16.667517)"
+         id="g3884">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0"
+           id="rect2989-9"
+           width="143.44167"
+           height="41.416256"
+           x="442.04144"
+           y="315.4559" />
+        <text
+           xml:space="preserve"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+           x="453.65826"
+           y="340.81784"
+           id="text2985-9"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan2987-8"
+             x="453.65826"
+             y="340.81784"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">OneWireDriver</tspan></text>
+      </g>
+      <g
+         transform="translate(-139.40105,-143.94672)"
+         id="g3879">
+        <rect
+           style="fill:#eeeeee;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 1;stroke-dashoffset:0"
+           id="rect2989-18"
+           width="143.44167"
+           height="41.416256"
+           x="421.23361"
+           y="442.73511" />
+        <text
+           xml:space="preserve"
+           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+           x="455.3812"
+           y="468.09705"
+           id="text2985-26"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan2987-6"
+             x="455.3812"
+             y="468.09705"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">SpiDriver</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 280.82241,62.412688 140.4112,112.92032"
+       id="path3917"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 352.54324,63.422841 0,50.507629"
+       id="path4363"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 425.27422,60.392383 573.76665,112.92032"
+       id="path4547"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 351.53309,155.34672 0,31.22192"
+       id="path4731"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 351.53309,227.98489 0,30.50763"
+       id="path4915"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 141.42136,155.34672 140.4112,259.92109"
+       id="path5099"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 573.76665,155.34672 0.41841,102.72737"
+       id="path5283"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g5473"
+       transform="translate(-4.2857143,-40.714286)">
+      <rect
+         y="277.63654"
+         x="22.142859"
+         height="97.06012"
+         width="662.14288"
+         id="rect5467"
+         style="fill:none;stroke:#ff0000;stroke-width:0.9455024;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:5.67301439, 0.9455024;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text5469"
+         y="370.93362"
+         x="283.57144"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+           y="370.93362"
+           x="283.57144"
+           id="tspan5471"
+           sodipodi:role="line">Hardware Drivers</tspan></text>
+    </g>
+  </g>
+</svg>

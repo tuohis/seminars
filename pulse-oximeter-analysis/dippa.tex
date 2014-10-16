@@ -1,0 +1,440 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                %%
+%% Esimerkki opinnäytteen tekemisestä LaTeX:lla 20110314          %%
+%% Alkuperäinen versio Luis Costa,  muutokset Perttu Puska        %%
+%%                                                                %%
+%% Tähän esimerkkiin kuuluu tiedostot                             %%
+%%               opinnaytepohja.tex (versio 1.4)                  %%
+%%               aaltothesis.sty (versio 1.4)                     %%
+%%               kuva1.eps                                        %%
+%%               kuva2.eps                                        %%
+%%                                                                %%
+%%                                                                %%
+%% Kääntäminen                                                    %%
+%% latex:                                                         %%
+%%             $ latex opinnaytepohja                             %%
+%%             $ latex opinnaytepohja                             %%
+%%                                                                %%
+%%   Tuloksena on tiedosto opinnayte.dvi, joka                    %%
+%%   muutetaan ps-muotoon seuraavasti                             %%
+%%                                                                %%
+%%             $ dvips opinnaytepohja -o                          %%
+%%                                                                %%
+%% Selittävät kommentit on tässä esimerkissä varustettu           %%
+%% %%-merkeillä ja muutokset, joita käyttäjä voi tehdä,           %%
+%% on varustettu %-merkeillä                                      %%
+%%                                                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Käytä näitä, jos kirjoitat suomeksi
+%%
+%% Use these you write in Finnish
+%\documentclass[finnish,12pt]{article}
+
+
+%% Käytä näitä, jos kirjoitat englanniksi
+%%
+%% Uncomment these if you write in English
+\documentclass[english,12pt]{article}
+
+%% Tämä paketti on pakollinen
+%%
+%% This package is required
+\usepackage{aaltothesis}
+
+%% Jos käytät latex-komentoa käännettäessä (oletusarvo) 
+%% kuvat kannattaa tehdä eps-muotoon. Älä käytä ps-muotoisia kuvia!
+%% Käytä seuraavaa latex-komennon ja eps-kuvien kanssa 
+%%
+%% Use this if you run latex and use eps-format pictures
+\usepackage[dvips]{graphicx}
+
+\graphicspath{{./}{./kuvat/}{./kuvat/measurements/}}
+%% Jos tääs käytät pdflatex-komentoa, 
+%% joka kääntää tekstin suoraan pdf-tiedostoksi ja kuvasi
+%% ovat esim. jpg-formaatissa tai pdf-formaatissa,   
+%% käytetään seuraavaa pakettia, kommentoi siis kommenttimerkki pois
+%% Huom! Tekstin marginaalit saattavat poiketa n. 2-5 mm
+%% suosituksesta, jos käytät pdflatex-komentoa!
+%% 
+%% Use this if you run pdflatex and use jpg/pdf-format pictures
+%% Note that margins are not correct with pdflatex output. 
+%\usepackage[pdftex]{graphicx} 
+
+%% Saat pdf-tiedoston viittaukset ja linkit kuntoon seuraavalla paketilla.
+%% Paketti toimii erityisen hyvin pdflatexin kanssa. 
+%%
+%% Use this if you want to get links and nice output with pdflatex
+%\usepackage[pdfpagemode=None,colorlinks=true,urlcolor=red,%
+%linkcolor=blue,citecolor=black,pdfstartview=FitH]{hyperref}
+
+%% Jos et jostain syystä tykkää käyttää
+%% edellistä hyperref pakettia, voit käyttää myös seuraavaa pakettia
+%% (tarvitaan lähinnä url-komennon määrittämiseen ja formatoimiseen)
+%%
+%% Use this if you do not like hyperref package - this
+%% defines url environment and formats it correctly
+\usepackage{url}
+
+%% Matematiikan fontteja, symboleja ja muotoiluja lisää, näitä tarvitaan usein 
+%%
+%% Use this if you write hard core mathematics, these are usually needed
+\usepackage{amsfonts,amssymb,amsbsy}  
+
+%% Make captions smaller than rest of the text, aligning to the start of the 
+%% text after ``Figure #:'', the label being bolded.
+\usepackage[format=hang,font={small,sl},labelfont={small,bf}]{caption}
+
+%%%%%%% Alphabetized list environment definition
+%\usepackage{datatool}
+
+%\newcommand{\sortitem}[2]{%
+%  \DTLnewrow{list}%
+%  \DTLnewdbentry{list}{label}{#1}%
+%  \DTLnewdbentry{list}{description}{#2}%
+%}
+%
+%\newenvironment{sortedlist}%
+%{%
+%  \DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}%
+%}%
+%{%
+%  \DTLsort{label}{list}%
+%  \begin{description}%
+%    \DTLforeach*{list}{\theLabel=label,\theDesc=description}{%
+%      \item[\theLabel] \theDesc
+%    }%
+%  \end{description}%
+%}
+%%%%% Alphabetized list ends
+
+%% Vaakasuunnan mitat, ÄLÄ KOSKE!
+\setlength{\hoffset}{-1in}
+\setlength{\oddsidemargin}{35mm}
+\setlength{\evensidemargin}{25mm}
+\setlength{\textwidth}{15cm}
+%% Pystysuunnan mitat, ÄLÄ KOSKE!
+\setlength{\voffset}{-1in}
+\setlength{\headsep}{7mm}
+\setlength{\headheight}{1em}
+\setlength{\topmargin}{25mm-\headheight-\headsep}
+\setlength{\textheight}{23cm}
+
+%% Super- and subscript in text mode
+\newcommand{\superscript}[1]{\ensuremath{^{\mathrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\mathrm{#1}}}}
+
+%%%%%%% Command for including centered images
+\newcommand{\centergraphics}[1]{\centering\includegraphics{#1}}
+%%%%%%% Make captions in italics
+%\let\Oldcaption\caption
+%\renewcommand{\caption}[1]{\Oldcaption{\emph{#1}}}
+
+\newcommand{\spo}[0]{S\subscript{p}O\subscript{2} }
+
+%% Kaikki mikä paperille tulostuu, on tämän jälkeen
+%%
+%% Output starts here
+\begin{document}
+
+%% Korjaa vastaamaan korkeakouluasi
+%%
+%% Change the school field to describe your school 
+\university{aalto university}{aalto-yliopisto}
+\school{School of Electrical Engineering}{Sähkötekniikan korkeakoulu}
+
+%% Vain kandityölle: Korjaa seuraavat vastaamaan tutkinto-ohjelmaasi
+%%
+%% Only for B.Sc. thesis: Choose your degree programme. 
+%\degreeprogram{Electronics and electrical engineering}%
+%{Elektroniikka ja sähkötekniikka}
+%%
+
+%% Vain DI/M.Sc.- ja lisensiaatintyölle: valitse laitos, 
+%% professuuri ja sen professuurikoodi. 
+%%
+%% Only for M.Sc. and Licentiate thesis: Choose your department,
+%% professorship and professorship code. 
+\department{Department of Automation and Systems Technology}%
+{Automaatio- ja systeemitekniikan laitos}
+\professorship{Autonomous Systems}{Autonomiset järjestelmät}
+\code{AS-84}
+%%
+
+%% Valitse yksi näistä kolmesta
+%%
+%% Choose one of these:
+%\univdegree{BSc}
+\univdegree{MSc}
+%\univdegree{Lic}
+
+%% Oma nimi
+%%
+%% Should be self explanatory...
+\author{Mikko Tuohimaa}
+
+%% Opinnäytteen otsikko tulee vain tähän. Älä tavuta otsikkoa ja
+%% vältä liian pitkää otsikkotekstiä. Jos latex ryhmittelee otsikon
+%% huonosti, voit joutua pakottamaan rivinvaihdon \\ kontrollimerkillä.
+%% Muista että otsikkoja ei tavuteta! 
+%% Jos otsikossa on ja-sana, se ei jää rivin viimeiseksi sanaksi 
+%% vaan aloittaa uuden rivin.
+%% 
+%% Your thesis title. If the title is very long and the latex 
+%% does unsatisfactory job of breaking the lines, you will have to
+%% break the lines yourself with \\ control character. 
+%% Do not hyphenate titles.
+\thesistitle{Development and Performance Analysis of a Novel Pulse Oximetry Measurement Circuit}{Uuden pulssioksimetriamittauspiirin kehitys ja suorituskykyanalyysi}
+
+\place{Espoo}
+%% Kandidaatintyön päivämäärä on sen esityspäivämäärä! 
+%% 
+%% For B.Sc. thesis use the date when you present your thesis. 
+\date{30.3.2012}
+
+%% Kandidaattiseminaarin vastuuopettaja tai diplomityön valvoja.
+%% Huomaa tittelissä "\" -merkki pisteen jälkeen, 
+%% ennen välilyöntiä ja seuraavaa merkkijonoa. 
+%% Näin tehdään, koska kyseessä ei ole lauseen loppu, jonka jälkeen tulee 
+%% hieman pidempi väli vaan halutaan tavallinen väli.
+%%
+%% B.Sc. or M.Sc. thesis supervisor 
+%% Note the "\" after the comma. This forces the following space to be 
+%% a normal interword space, not the space that starts a new sentence. 
+\supervisor{Prof.\ Arto Visala}{Prof.\ Arto Visala}
+
+%% Kandidaatintyön ohjaaja(t) tai diplomityön ohjaaja(t)
+%% 
+%% B.Sc. or M.Sc. thesis instructor(s)
+%\instructor{Prof. Pirjo Professori}{Prof. Pirjo Professori}
+%\instructor{D.Sc.\ (Tech.) Olli Ohjaaja}{TkT Olli Ohjaaja}
+\instructor{M.Sc.\ (Tech.) Sakari Lamminmäki}{DI Sakari Lamminmäki}
+
+%% Aaltologo: syntaksi: \uselogo{red|blue|yellow}{?|!|''}
+%% Logon kieli on sama kuin dokumentin kieli
+%%
+%% Aalto logo: syntax: \uselogo{red|blue|yellow}{?|!|''} 
+%% Logo language is set to be the same as the document language.
+\uselogo{red}{!}{elec}
+
+%% Tehdään kansilehti
+%%
+%% Create the coverpage
+\makecoverpage
+
+%
+%% English abstract, uncomment if you need one. 
+%% 
+%% Abstract keywords
+\keywords{Pulse Oximetry, \spo, Optical Measurement, Measurement Circuit, \\ 
+          Microcontroller, Regression Analysis, Black Box, System Testing}
+%% Abstract text
+\begin{abstractpage}[english]
+All life, including human tissues, depends on sufficient oxygenation. Severe, irreversible cell damage can occur if oxygen supply is prohibited due to the fact that the tissues have only minimal oxygen reserves. Therefore it's essential to monitor oxygen delivery during anesthesia, critical care and other high-risk situations.
+
+Pulse oximetry is a non-invasive optical method used for continuous measurement of oxygen saturation of arterial blood. Infrared and red monochromatic light are transmitted through tissue and the transmittance measured with a photodetector -- due to the fact that hemoglobin's absorption spectrum depends on if it's carrying oxygen or not, the ratio of transmittances can be used to determine the percentage of hemoglobin that is oxygenated. Additionally, the measurement can be focused on arterial blood by examining the pulsatile waveform induced by cardiac activity. The result is a good indicator of oxygen deprivation and it's been used in clinical care for decades, the devices usually having been large and static multi-parameter monitors. GE Healthcare is developing new pulse oximetry solutions for a range of applications with different power and performance requirements.
+
+The goal of this thesis was to verify that a new small pulse oximetry measurement solution reaches the strict design specifications set for it, including a very low noise level, a high dynamic range and the ability to function in an extremely low power mode. The means to this goal was to develop the software used by this novel front-end, assess the performance of the system as a whole and use regression analysis to identify possible noise sources and other defects in the signal chain. Additionally, based on the measurements, a relationship connecting various operating limits and minimum power consumption was formed. The outputs of the thesis are the new evaluation process using a black-box approach, two bugs found in the receiver signal chain thanks to the aforementioned process and the notion that the new front-end can be accepted if the issues identified are fixed.
+\end{abstractpage}
+%% Note that 
+%% if you are writting your master's thesis in English place the English
+%% abstract first followed by the possible Finnish abstract
+%%
+%% Force new page so that English abstract starts from a new page
+%\newpage
+%% Suomenkielinen tiivistelmä
+%% 
+%% Finnish abstract
+%%
+%% Tiivistelmän avainsanat
+%\keywords{Pulssioksimetria, SpO2, regressioanalyysi}
+%% Tiivistelmän tekstiosa
+%\begin{abstractpage}[finnish]
+%  Tässä diplomityössä on kehitetty sulautettu ohjelmisto
+%  uudelle pulssioksimetriamittauspiirille ja analysoitu kyseisen
+%  piirin suorituskykyä tilastollisin menetelmin, mm. regressiomallien avulla.
+%  Tuloksena on saatu yleisesti pätevä analysointiprosessi ja analyysin 
+%  perusteella identifioitu piiristä suunnitteluvirheitä. Analyysin
+%  lopputuloksena on todettu, että piiri täyttää sille asetetut 
+%  suoritus\-kyky\-vaatimukset, kunhan löydetyt virheet korjataan
+%  seuraavalla prototyyppi\-kierroksella.
+%\end{abstractpage}
+
+%% Esipuhe 
+%%
+%% Preface
+%\mysection{Esipuhe}
+\mysection{Preface}
+This thesis is the culmination point of seven years of studying in Helsinki University of Technology, later known as Aalto University. It has been quite a ride.
+
+The old saying is that the university educates you in science but the student community educates you in life. I've found this most accurate during my stay in Otaniemi campus and I'd like to thank everyone with whom I've had the pleasure to study, party, talk politics, talk nonsense, laugh, cry, love, hate, et cetera and so forth. Without all that I probably would've graduated a long time ago but without the best memories of my life.
+
+Most of those memories and fine moments have something to do with one of three instances: the Guild of Automation and Systems Technology (especially the board of 2007), the 2007 Committee of Freshman Education and Luolamiehet. You all know what I'm talking about. Also thanks to the AS freshmen of 2005, especially Tuomas and Kalle, for taking the dive with me into the university realm.
+
+GE Healthcare deserves special thanks; I feel privileged to have been able to work on a very interesting subject with a lot of responsibility, doing stuff that matters. Also the employees of the Circulatory team are not only very bright people but also great fun to work with. Extra special thanks go to Sakari Lamminmäki for having great confidence in me and my abilities which showed in letting me work very independently and follow my intuition.
+
+Finally, thanks, mom and dad, for showing nothing but support in the decisions I've made throughout the years.
+
+\vspace{5cm}
+\dateandplace{}
+
+\vspace{5mm}
+{\hfill Mikko T.\ A.\ Tuohimaa \hspace{1cm}}
+
+%% Pakotetaan varmuuden vuoksi esipuheen jälkeinen osa
+%% alkamaan uudelta sivulta
+%%
+%% Force new page after preface
+\newpage
+
+
+%% Sisällysluettelo
+%% addcontentsline tekee pdf-tiedostoon viitteen sisällysluetteloa varten
+%% 
+%% Table of contents. 
+\addcontentsline{toc}{section}{Contents}
+%% Tehdään sisällysluettelo
+%%
+%% Create it. 
+\tableofcontents
+
+%% Symbols and abbreviations
+\mysection{Symbols and abbreviations}
+\subsection*{Symbols}
+
+\begin{tabular}{ll}
+$f$								& Frequency \\
+$I, I_0, I_\lambda$  & Light intensity, incident light intensity, light intensity at wavelength $\lambda$  \\
+$m$               & $I_{AC} / I_{DC}$; signal modulation coefficient \\
+$p$               & Partial pressure \\
+$p_{O_2}$         & Partial pressure of oxygen \\
+$p_{CO_2}$        & Partial pressure of carbon dioxide  \\
+$R$								& $m_{R} / m_{IR}$; the ratio of the modulations of the red and the IR signals \\
+$\alpha$					& The portion of plethysmographic waveform energy that is focused on \\ & its fundamental frequency \\
+$\beta$						& The portion of noise energy that is focused on the pleth fundamental \\ & frequency \\
+$\epsilon$				& Extinction coefficient \\
+$\sigma$				  & Standard deviation \\
+$\tau$						& Time period, interval
+\end{tabular}
+
+\subsection*{Operators}
+
+\begin{tabular}{ll}
+$\displaystyle\frac{\mbox{d}}{\mbox{d} t}$ & The derivative in respect to the variable $t$ \\
+[3mm]
+$\displaystyle\frac{\partial}{\partial t}$  & The partial derivative in respect to the variable $t$ \\
+[3mm]
+$\sum_i $                       & Sum over the index $i$ 
+\end{tabular}
+
+\subsection*{Abbreviations}
+
+\begin{tabular}{ll}
+A/D, ADC        & Analog to Digital, Analog to Digital Converter \\
+BW							& Bandwidth, frequency range \\
+CO              & Carbon monoxide \\
+CO\subscript{2} & Carbon dioxide \\
+COHb            & Carboxyhemoglobin \\
+D/A, DAC				& Digital to Analog, Digital to Analog Converter \\
+DMA							& Direct Memory Access \\
+EEPROM          & Electronically Erasable Programmable Read-Only Memory \\
+GE							& General Electric \\
+GEHC						& GE Healthcare \\
+GPIO						& General Purpose Input/Output \\
+Hb							& Hemoglobin \\
+ICU							& Intensive Care Unit \\
+I/O							& Input/Output \\
+LED							& Light Emitting Diode \\
+LSB							& Least Significant Bit/Byte \\
+MetHb						& Methemoglobin \\
+MSB							& Most Significant Bit/Byte \\
+O\subscript{2}  & Oxygen \\
+O\subscript{2}Hb & Oxygenated hemoglobin (oxyhemoglobin) \\
+OR							 & Operating Room \\
+RAM              & Random Access Memory \\
+RBC							 & Red Blood Cell \\
+RHb              & Reduced (deoxygenated) hemoglobin \\
+RISC             & Reduced Instruction Set Computer \\
+RMS							 & Root-Mean-Square \\
+RoHS						 & Reduction of Hazardous Substances \\
+S\subscript{a}O\subscript{2} & Arterial blood oxygen saturation \\
+SNR							 & Signal to Noise Ratio \\
+SPI							 & Serial Peripheral Interface Bus \\
+S\subscript{p}O\subscript{2} & Arterial blood hemoglobin oxygen saturation measured with a \\ & pulse oximeter \\
+UART						 & Universal Asynchronous Receiver/Transmitter \\
+USCI						 & Universal Serial Communication Interface
+\end{tabular}
+
+%\begin{sortedlist}
+%\sortitem{A/D, ADC}{Analog to Digital, Analog to Digital Converter}
+%\sortitem{O\subscript{2}}{Oxygen}
+%\sortitem{CO\subscript{2}}{Carbon dioxide}
+%\sortitem{O\subscript{2}Hb}{Oxyhemoglobin}
+%\sortitem{Hb}{Hemoglobin}
+%\sortitem{RHb}{Reduced (deoxygenated) hemoglobin}
+%\end{sortedlist}
+
+
+%% Sivulaskurin viilausta opinnäytteen vaatimusten mukaan:
+%% Aloitetaan sivunumerointi arabialaisilla numeroilla (ja jätetään
+%% leipätekstin ensimmäinen sivu tyhjäksi, 
+%% ks. alla \thispagestyle{empty}).
+%% Pakotetaan lisäksi ensimmäinen varsinainen tekstisivu alkamaan 
+%% uudelta sivulta clearpage-komennolla. 
+%% clearpage on melkein samanlainen kuin newpage, mutta 
+%% flushaa myös LaTeX:n floatit 
+%% 
+%% Corrects the page numbering, there is no need to change these
+\cleardoublepage
+\storeinipagenumber
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%% Leipäteksti alkaa
+%%
+%% Text body begins. Note that since the text body
+%% is mostly in Finnish the majority of comments are
+%% also in Finnish after this point. There is no point in explaining
+%% Finnish-language specific thesis conventions in English.
+%\section{Johdanto}
+\section{Introduction}
+
+All life, including human tissues, depends on sufficient oxygenation. Severe, irreversible cell damage can occur if oxygen supply is prohibited due to the fact that the tissues have only minimal oxygen reserves. Therefore it's essential to monitor oxygen delivery during anesthesia, critical care and other high-risk situations.
+
+Pulse oximetry is a non-invasive optical method used for continuous measurement of oxygen saturation of arterial blood. It's a good indicator of oxygen deprivation and it has been used in clinical care for decades, the devices usually having been large and static multi-parameter monitors. GE Healthcare is developing new pulse oximetry solutions for a range of applications with different power and performance requirements.
+
+The core of the measurement is the measurement circuit, also known as the front-end. It acts on the device-patient interface producing as high-quality measurements as possible. The signal processing algorithm relies on the incoming signal being accurate and noise-free, and therefore the performance of the front-end will directly translate into more accurate algorithm output.
+
+The goal of this thesis is to verify that a new small pulse oximetry measurement solution reaches the strict design specifications set for it, including a very low noise level, a high dynamic range and the ability to function in an extremely low power mode. The means to this goal is to develop the software used by this novel front-end, assess the performance of the system as a whole and use regression analysis to identify possible noise sources and other defects in the signal chain. Additionally, based on the measurements, a relationship connecting various operating limits and minimum power consumption is formed. The output of the thesis is if the new front-end can be accepted or not and the rationale behind the decision, and if the front-end is deemed unsatisfactory, an analysis on which components are decreasing the system's performance.
+
+The front-end evaluation is done using a black-box approach. This is necessary since the front-end hardware is so tightly packed and shielded that it's not practically possible to measure anything in the middle of the signal chain -- therefore the only data source used is the system's own output. This is a new approach in assessing subsystem-specific performance; the process developed will be useful in the future as miniaturization becomes more and more common in the industry.
+
+In the first part of the thesis an introduction to the physiological basis of tissue oxygenation is given and the principles of pulse oximetry are explained. Further on, a theoretical noise performance specification is derived for the new circuit and the main components contributing to total system noise are listed. The new measurement circuit is introduced in chapter \ref{section:integrated_afe}, the process for its evaluation drafted in chapter \ref{section:prototype_validation} and the results and their interpretation shown in chapter \ref{section:performance_analysis}.
+
+\input{tissue_oxygenation.tex}
+
+\input{pulse_oximetry.tex}
+
+\input{noise_characterization.tex}
+
+\input{integrated_afe.tex}
+
+\input{prototype_validation.tex}
+
+\input{performance_analysis.tex}
+
+\input{discussion.tex}
+
+\input{conclusions.tex}
+
+\clearpage
+%% Lähdeluettelo
+\bibliographystyle{unsrt}
+\bibliography{library,extras}
+
+\end{document}
+
+
