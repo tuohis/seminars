@@ -1,0 +1,68 @@
+%\documentclass[a4paper,12pt]{report}
+\documentclass[finnish,12pt]{article}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage{ae,aecompl}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+%% Matematiikan fontteja, symboleja ja muotoiluja lisï¿½ï¿½, nï¿½itï¿½ tarvitaan usein
+\usepackage{amsfonts,amssymb,amsbsy}
+%% Taulukon paketti
+%\usepackage{multirow}
+
+%% Vaakasuunnan mitat, ï¿½Lï¿½ KOSKE!
+\setlength{\hoffset}{-1in}
+\setlength{\oddsidemargin}{35mm}
+\setlength{\evensidemargin}{20mm}
+\setlength{\textwidth}{15cm}
+%% Pystysuunnan mitat, ï¿½Lï¿½ KOSKE!
+\setlength{\voffset}{-1.5in}
+%\setlength{\headsep}{7mm}
+%\setlength{\headheight}{1em}
+\setlength{\topmargin}{25mm}
+\setlength{\textheight}{24cm}
+%% Vasensuora-asettelu, joka opinnï¿½ytteessï¿½ vaaditaan. ï¿½Lï¿½ KOSKE
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+%% bibtex-tyyli
+\bibliographystyle{apalike}
+
+% Title Page
+\title{S-113.2210 Seminaarityö: arpikudos aivoelektrodeissa}
+\author{Mikko Tuohimaa}
+\date{7.4.2011}
+
+
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+%\setcounter{page}{1}
+\begin{abstract}
+Aivoihin implantoitavien elektrodien ympärille syntyvä arpikudos on yksi suurimmista syistä pitkäaikaisten implanttien suorituskyvyn huonontumiseen, syynä sen eristävä vaikutus. Tässä työssä käydään läpi nykyiset implanttityypit, arpikudoksen muodostumisprosessi ja kartoitetaan eri menetelmiä sen ehkäisemiseksi.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% Aloitetaan arabialainen numerointi vasta tästä
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Osiot ovat omina tiedostoinaan, jolloin niitä voi muokata samanaikaisesti
+% ja myös järjestellä helposti
+\input{johdanto}
+\input{implantin_rakenne}
+\input{bioaktiiviset_pinnoitteet}
+%\include{tulevaisuus}
+\input{johtopaatokset}
+
+\clearpage
+
+% liitetään bibtex-viitteet
+\bibliography{biomat_semma}
+
+\end{document}          

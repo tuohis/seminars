@@ -1,0 +1,39 @@
+\section{Implantin mekaniikka}
+
+Elektroniikassa ja MEMS-teknologiassa yleisesti käytössä olevat piin muokkausmenetelmät ovat avanneet uusia mahdollisuuksia piipohjaisten implanttien rakenteelle. Kokeiluja on tehty niin elektrodivarren poikkileikkauksen kuin 3D-muodon suhteen, mutta yhteisten standardien puuttuessa tulokset eivät ole keskenään kovinkaan vertailukelpoisia. %\cite{Polikov}
+
+Implantin rakenteessa olennaista on sen mekaaniset ominaisuudet ja dimensiot. Reunaehtona on, että implantin pitää olla käyttötarkoitukseensa tarpeeksi vankkaa tekoa, mutta muuten yleinen käsitys on, että mitä pienempi implantti on, sitä paremmin se soveltuu pitkäaikaiseen käyttöön. Myös erilaiset materiaalivalinnat vaikuttavat sen ominaisuuksiin, erityisesti kimmomoduuliin, millä on myös oma vaikutuksensa bioyhteensopivuuteen. \cite{Polikov} \cite{Seymour}
+
+\subsection{Mikroliike}
+
+Aivot eivät ole staattisessa tilassa, vaan liikkuvat sekä paikallisesti että kokonaisuutena suhteessa kalloon sydämenlyöntien, hengityksen ja potilaan liikkeiden vaikutuksesta aiheuttaen paikallista painetta ja voimia. Implantoitavat elektrodit ovat yleensä käytännön syistä hyvin paljon aivokudosta jäykempiä, minkä johdosta ympäröivät voimat saavat aikaan implantin mikroliikettä suhteessa kudokseen. Tämä puolestaan rikkoo soluväliaineen rakenteita implantin välittömässä läheisyydessä ja aiheuttaa immuunireaktion. Materiaalivalinnalla voidaan vaikuttaa implantin jäykkyyteen ja joitakin kokeiluja onkin tehty mm. polymeereilla, mutta toistaiseksi pii on yleisin materiaali sen työstöominaisuuksien vuoksi.
+
+\subsection{Implantin johdotus}
+
+Yksi mikroliikettä aikaansaava tekijä on implantin johdotus kallosta ulos. Implantin mittaustulokset pitää saada hyötykäyttöön, eikä langattomuus ole tässä mittakaavassa vaihtoehto - siispä johdotus on vedettävä kallon läpi, ja kun elektrodi on mekaanisesti kiinni kallossa ja aivot liikkuvat suhteessa kalloon, on yhtälö vaikea ratkaistavaksi. Erilaisia joustavia, esim. polymeeripohjaisia johdotuksia on ehdotettu \cite{Lee}, mutta mitään hyvää ratkaisua tähän ongelmaan ei vielä ole.
+
+Yhtenä vaihtoehtona voisi olla elektrodien ohjauselektroniikan sijoittaminen aivojen pinnalle, energian tarjoaminen induktiivisesti ja datan siirto radioteitse. Tällöin kallon ja elektrodin välillä ei olisi suoraa mekaanista yhteyttä, mutta toisaalta implantoitavan materiaalin määrä kasvaisi huomattavasti, mikä puolestaan lisäisi sekä implantoinnin haasteellisuutta että mahdollisesti kokonaisvierasesinevastetta.
+
+\subsection{Ristikkorakenne}
+
+Seymour ja Kipke kokeilivat tutkimuksessaan \cite{Seymour} elektrodirakennetta, jossa perinteisin piimenetelmin valmistetun paryleenivarren yhdessä reunassa on hyvin kapeaelementtinen ristikkorakenne (kuva \ref{fig:ristikko}). Hypoteesina oli, että mitä pienempi elektrodipinnan dimensio on, sitä vaikeampaa on astrosyyttien tarttua siihen ja sitä kautta muodostaa arpikudoskoteloa sen ympärille. Implantti ei voi kuitenkaan kokonaisuudessaan olla kovinkaan ohut, koska implantointi vaatii tietyt mekaaniset ominaisuudet. Tutkimuksessa käytetty rakenne osoittautui hyväksi, koska sillä saavutettiin vain 4 $\mu$m kapea pinta elektrodin kokonaisjäykkyyden kärsimättä juurikaan.
+
+\begin{figure}[htcb]
+ \begin{center}
+  \includegraphics[scale=0.4]{ristikko_rakenne.png}
+  \caption{Seymourin ja Kipken käyttämä epoksi-paryleenipohjainen ristikkorakenne. \cite{Seymour}}
+  \label{fig:ristikko}
+ \end{center}
+\end{figure}
+
+Kuvassa \ref{fig:ristikko_vaste} näkyy, miten Seymourin ja Kipken tutkimuksessa immuunivaste on keskittynyt elektrodin varren ympärille itse elektrodin jäädessä huomattavasti vapaammaksi. Tämä tukee alkuperäistä hypoteesia, mutta on myös huomattava että kapeat tukivarret ovat perinteistä joustavampia, mikä saattaa osaltaan vaikuttaa parantuneeseen vasteeseen. On mahdollista, että joustavampi rakenne vähentää mikroliikkeen aikaansaamaa vauriota soluväliaineessa ja siten myös kroonista tulehdusreaktiota elektrodipinnan välittömässä läheisyydessä.
+
+\begin{figure}[h]
+ \begin{center}
+  \includegraphics[scale=0.5]{ristikko_tulokset.png}
+  \caption{Seymourin ja Kipken tulokset: ei-neuronaalisen kudoksen tiheys varren ja ristikkorakenteen ulkoreunan ympärillä. Tulokset osoittavat rakenteen aiheuttavan vähemmän koteloitumista elektrodipinnan läheisyydessä kuin perinteisen elektrodisijoittelun tapauksessa. \cite{Seymour}}
+  \label{fig:ristikko_vaste}
+ \end{center}
+\end{figure}
+
+Ristikkorakenteen tekemisessä käytetyillä valmistusmenetelmillä on mahdollista tehdä myös muunlaisia palkkirakenteita tasossa, esimerkiksi kolmiopalkkirakenteita. Suorakulmainen ristikkorakenne on kuitenkin siinä mielessä optimaalinen, että jos elektrodi sijoitetaan kahden tukipalkin välille, rakenne minimoi materiaalin määrän elektrodin läheisyydessä. 3D-rakenteetkin ovat teoriassa mahdollisia, mutta käytännössä niin kalliita valmistaa, että niitä ei vielä kannata tutkia kovinkaan paljoa.

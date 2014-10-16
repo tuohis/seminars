@@ -1,0 +1,71 @@
+\section{Johdanto}
+
+Aivoihin implantoidut pii-, polymeeri- ja mikrolankaelektrodit ovat paras ja pääasiallinen tapa kerätä tarkkaan lokalisoitua tietoa aivojen sähköisestä aktiivisuudesta. Tätä tietoa pystytään puolestaan käyttämään hyväksi paitsi kliinisessä tutkimuksessa, myös esim. ohjattavien proteesien käyttöliittymänä. Eritoten jälkimmäisessä tarkoituksessa implantointi on tarkoitettu pysyväksi, joten elektrodien pitkän ajan toiminnallisuus on tärkeää.
+
+Suurimpana haasteena kroonisesti implantoitujen elektrodien toiminnassa on elimistön immuunivaste ja varsinkin keskushermoston uniikki vierasesinereaktio. Tutkimuksissa on havaittu, että elektrodista saatava signaali yleensä heikkenee ajan kuluessa niin, että jo 4 viikon jälkeen elektrodi saattaa olla käyttö\-kel\-vo\-ton. Tämä suurimmalta osin johtuu siitä, että elektrodin ympärille muodostuu arpikudosta, joka lisää elektrodin ja neuronien välistä etäisyyttä ja toimii myös sähköisenä eristeenä - jo 50 $\mu$m:n suuruusluokkaa oleva arpikudoskerros voi heikentää signaalia merkittävästi. Tämä työ esittelee eri elektrodityyppejä ja tapoja, joilla arpikudoksen muodostumista voidaan vähentää. \cite{Polikov}
+
+\section{Implanttityypit}
+
+Perinteisesti väliaikaisia mittauksia on tehty yksittäisellä mikrolangalla tai lasisella mikropipettielektrodilla. On kuitenkin selvää, että implantoidessa elektrodit pysyvästi halutaan samassa operaatiossa istuttaa mahdollisimman paljon dataa tarjoava anturijoukko: pääpaino onkin kääntynyt monielektrodisiin sovelluksiin, jotka voidaan toteuttaa mikrolanka- tai piipohjaisilla tekniikoilla. Tällöin elektrodijoukossa voikin olla jopa sata mittauspistettä hyvin lähellä toisiaan, millä saadaan sekä kasvatettua signaalin voimakkuutta että tutkittua neuroniverkkojen toimintaa. \cite{Nicolelis}
+
+Yhteistä kaikille implanttityypeille on se, että itse elektrodi on pieni alue tukivarren päässä muun implantin ollessa sähköisesti eristetty. Tämä mahdollistaa paikallisen mittaamisen ja parempilaatuisen signaalin.
+
+\subsection{Mikrolangat}
+
+Mikrolangat ovat joidenkin mikrometrien paksuisia metallilankoja (yleisimpinä materiaaleina platina, kulta, volframi, iridium ja ruostumaton teräs), jotka on päällystetty eristeellä, yleensä lasilla (kuva \ref{fig:microwire}). Mikrolangoista voidaan tehdä pitkiä, mikä mahdollistaa mittaukset syvemmältä aivoista, mutta koska ne ovat joustavia ja aivokudos on heterogeenistä, ei niiden tarkka implantointi ole mahdollista.
+
+\begin{figure}[htcb]
+ \begin{center}
+  \includegraphics[scale=0.75]{microwire.jpg}
+  \caption{Elektronimikroskooppikuva lasipäällysteisestä mikrolankaelektrodista. Lähde: http://www.jyi.org/research/re.php?id=1493}
+  \label{fig:microwire}
+ \end{center}
+\end{figure}
+
+
+\subsection{Piipohjaiset implantit}
+
+Piipohjaiset implantit valmistetaan elektroniikasta ja MEMS-teknologiasta tutuilla menetelmillä. Kyseisillä tekniikoilla saadaan aikaan tarkkoja, erittäin pieniä rakenteita, joiden sähköiset ominaisuudet ovat hyvin hallittavissa. Kuvassa \ref{fig:silicon_probe} näkyy perinteisen muotoinen piipiikkielektrodi, johon on myös lisätty kemiallinen sensori.
+
+\begin{figure}[htcb]
+ \begin{center}
+  \includegraphics[scale=0.5]{silicon_probe.jpg}
+  \caption{Elektronimikroskooppikuva piipohjaisesta elektrodista, joka sisältää myös kemiallisen sensorin. Lähde: http://samlab.epfl.ch/page-15473-en.html}
+  \label{fig:silicon_probe}
+ \end{center}
+\end{figure}
+
+Pii-implantit valmistetaan usein siten, että yhdessä elementissä on monta yksittäistä elektrodia oman tukivartensa päässä joko jono- tai matriisimuodostelmassa (kuva \ref{fig:silicon_array}). Nykyisillä menetelmillä kunkin piikin korkeus on yksilöllisesti valittavissa ja yhdessä piikissä voi olla useita mittauspisteitä, joten neuroverkkojen 3D-mittaukset ovat mahdollisia.
+
+Piipohjaisia valmistusmenetelmiä käytettäessä voi itse implantin materiaalina olla myös jokin muu kuin pii, kuten polymeeri tai metalli. Valmistusmenetelmät kuitenkin rajoittavat materiaalivalikoimaa jonkin verran.
+
+\begin{figure}[htcb]
+ \begin{center}
+  \includegraphics[scale=0.5]{silicon_array.jpg}
+  \caption{Piielektrodimatriisi. Lähde: http://www.newscientist.com/blogs/ shortsharpscience/2011/03/power-of-thought-neural-implan.html}
+  \label{fig:silicon_array}
+ \end{center}
+\end{figure}
+
+\subsection{Polymeeri-implantit}
+
+Polymeereja on tutkittu implanttimateriaaleina jonkin verran. Niiden ehdottomana etuna on elastisuuden tuoma parempi kimmoyhteensopivuus kudoksen kanssa, mutta heikkoutena implantoinnin vaikeus: joustavaa implanttia ei voi työntää suoraan aivokalvon läpi, vaan väylä täytyy puhkaista erikseen. Tämä on sekä haastavampaa että aiheuttaa enemmän tuhoa kudoksessa kuin pii- ja mikrolankaimplanttien tapauksessa. \cite{Polikov}
+
+%\clearpage
+\section{Implantointi ja keskushermoston immuunivaste}
+
+Implantoinnin ja elektrodien itsensä aiheuttama immuunivaste aivoissa on suurin elektrodin toimintaa haittaava tekijä. Siispä elektrodien suorituskyvyn maksimoimiseksi on tärkeää ymmärtää ne biologiset mekanismit, jotka ajavat immuuniprosessia.
+
+On huomattava, että neuronit muodostavat vain alle 25\% aivokudoksesta; loput ovat verenkiertoon liittyviä soluja sekä gliosyyttejä, hermotukisoluja, jotka ovat aivojen immuunivasteen merkittävimmät osallistujat. Näistä astrosyytit muodostavat matriksia (arpikudosta) vauriokohtaan ja mikrogliasolut toimivat sytotoksisina soluina tai fagosyytteinä tuhoten vaurioitunutta kudosta.
+
+Implantointiprosessi on usein väkivaltainen - neulamaiset elektrodit työnnetään aivokudoksen läpi kohteeseensa, mikä rikkoo hiussuonia,  aivojen tukikudosta ja solurakenteita. Lisäksi implantti syrjäyttää tieltään kudosta aiheuttaen painetta implantin välittömässä läheisyydessä olevassa kudoksessa. Tämä mekaaninen vaurio aiheuttaa keskushermostolle ominaisen vasteen, joka muistuttaa paljon muiden kudosten paranemisprosessia. Mainittakoon, että vauriokohtaan kertyy nestettä aiheuttaen turvotusta, mikä edelleen pahentaa kudokseen kohdistuvaa painetta.\cite{Polikov}
+
+Paranemisprosessi on tehokas, ja implantointireitin vauriot yleensä korjautuvat joidenkin viikkojen aikana. Varsinaisena ongelmana onkin, että implantti jota mikrogliasolut eivät saa tuhottua saa aikaan kroonisen vierasesinevasteen, jossa mikrogliasolut erittävät jatkuvasti proteolyyttisiä entsyymejä tuhoten samalla ympäröivää hermokudosta \cite{McConnell} ja astrosyytit muodostavat implantin ympärille arpikudosta. Tämä reaktio tulee esille vasta varsinaisen immuunireaktion jälkeen ja on suurin syyllinen epäonnistuneisiin implantointeihin. Kuvaavaa on, että eräässä tutkimuksessa 25\%:ssa implantoiduista piielektrodeista oli merkkejä aktivoituneista mikrogliasoluista vielä 6 kuukautta implantoinnin jälkeen. \cite{Schmidt} Yleisesti ottaen jo kuudessa viikossa arpikudos saattaa olla niin paksu, että se haittaa pysyvästi elektrodin toimintaa. \cite{Turner}
+
+\subsection{Implantointimenetelmän vaikutus}
+
+Tutkimukset osoittavat, että veren seerumilla on merkittävä osuus arpeutumisen edistämisessä ja veri myös aiheuttaa tulehdusreaktion kudoksessa. Tämän takia mitä vähemmän verisuonia katkeaa implantoinnin yhteydessä, sitä pienempi on immuunireaktio ja sitä vähemmän arpikudosta syntyy. Implantointimenetelmä saattaa vaikuttaa syntyneeseen vaurioon ja siten implantoinnin onnistumiseen, mutta vertailukelpoisia tuloksia ei juuri ole. Eri tutkimusryhmät ovat kokeilleet eri implantointinopeuksia n. 100 $\mu$m/s ja 8,3 m/s välillä, mutta koska tarkasteltava systeemi on niin monimutkainen, on kullakin menetelmällä ja nopeudella etunsa ja haittansa. \cite{Polikov}
+
+%Bioaktiiviset pinnat houkuttelevat neuroneita lähelleen ja siten maksimoivat signaalin lyhyellä aikavälillä, mutta eivät hidasta arpikudoksen muodostumista.
+
+%Ongelma: bioaktiivisten aineiden saaminen elektrodille jatkuvalla syötöllä. Mikrofluidistiikka?
